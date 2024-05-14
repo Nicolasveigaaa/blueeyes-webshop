@@ -1,3 +1,4 @@
+import Navbar from 'components/layout/navbar';
 import { GeistSans } from 'geist/font/sans';
 import { ensureStartsWith } from 'lib/utils';
 import { ReactNode } from 'react';
@@ -34,6 +35,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en" className={GeistSans.variable}>
       <body className="bg-neutral-50 text-black">
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
