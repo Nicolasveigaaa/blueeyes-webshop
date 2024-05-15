@@ -1,15 +1,10 @@
-export default function OpenCart({
-  className,
-  quantity
-}: {
-  className?: string;
-  quantity?: number;
-}) {
+import { ShoppingBagIcon } from '@heroicons/react/24/outline';
+
+export default function OpenCart({ quantity }: { quantity?: number }) {
   return (
     <div className="flex gap-2">
-      <p>Cart</p>
-
-      {quantity ? <div className="">({quantity})</div> : null}
+      <ShoppingBagIcon className="h-5" />
+      {quantity ? <div>({quantity})</div> : ''}
     </div>
   );
 }

@@ -1,8 +1,6 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
-import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
 import type { Cart } from 'lib/shopify/types';
 import { createUrl } from 'lib/utils';
@@ -66,17 +64,20 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
           >
             <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px]">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold">My Cart</p>
+                <p className="">My Cart</p>
 
-                <button aria-label="Close cart" onClick={closeCart}>
+                <button
+                  aria-label="Close cart"
+                  onClick={closeCart}
+                  className="transition-all hover:rotate-90"
+                >
                   <CloseCart />
                 </button>
               </div>
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
-                  <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+                  <p className="mt-6 text-center text-lg">Your cart is empty.</p>
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
@@ -119,7 +120,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                                 />
                               </div>
 
-                              <div className="flex flex-1 flex-col text-base">
+                              <div className="flex flex-1 flex-col">
                                 <span className="leading-tight">
                                   {item.merchandise.product.title}
                                 </span>
@@ -131,12 +132,11 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                               </div>
                             </Link>
                             <div className="flex h-16 flex-col justify-between">
-                              <Price
-                                className="flex justify-end space-y-2 text-right text-sm"
-                                amount={item.cost.totalAmount.amount}
-                                currencyCode={item.cost.totalAmount.currencyCode}
-                              />
-                              <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 ">
+                              <p className="flex justify-end space-y-2 text-right text-sm">
+                                {item.cost.totalAmount.amount} kr
+                              </p>
+
+                              <div className="ml-auto flex h-9 flex-row items-center ">
                                 <EditItemQuantityButton item={item} type="minus" />
                                 <p className="w-6 text-center">
                                   <span className="w-full text-sm">{item.quantity}</span>
@@ -152,11 +152,9 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                   <div className="py-4 text-sm text-neutral-500 ">
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 ">
                       <p>Taxes</p>
-                      <Price
-                        className="text-right text-base text-black "
-                        amount={cart.cost.totalTaxAmount.amount}
-                        currencyCode={cart.cost.totalTaxAmount.currencyCode}
-                      />
+                      <p className="text-right text-base text-black ">
+                        {cart.cost.totalTaxAmount.amount} kr
+                      </p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 ">
                       <p>Shipping</p>
@@ -164,16 +162,14 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 ">
                       <p>Total</p>
-                      <Price
-                        className="text-right text-base text-black "
-                        amount={cart.cost.totalAmount.amount}
-                        currencyCode={cart.cost.totalAmount.currencyCode}
-                      />
+                      <p className="text-right text-base text-black ">
+                        {cart.cost.totalAmount.amount} kr
+                      </p>
                     </div>
                   </div>
                   <a
                     href={cart.checkoutUrl}
-                    className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+                    className="block w-full bg-[#3E54A4] p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
                   >
                     Proceed to Checkout
                   </a>

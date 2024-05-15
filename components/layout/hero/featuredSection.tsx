@@ -46,13 +46,14 @@ export default async function FeaturedSection() {
                 fill
               />
 
-              <div className="absolute bottom-20 left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]">
-                <Link href={`/product/${firstProduct.handle}`}>
-                  <p className="text-center text-sm text-white">
-                    BLUE EYES ® / {firstProduct.title} <br /> SHOP NOW
-                  </p>
-                </Link>
-              </div>
+              <Link href={`/product/${firstProduct.handle}`}>
+                <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center  bg-[#3E54A4] hover:bg-blue-400">
+                  <div className="text-center text-sm text-white  ">
+                    <p>BLUE EYES ® / {secondProduct.title}</p>
+                    <p className="inline-block border-b-[1px] border-white uppercase">Shop Now</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -60,7 +61,7 @@ export default async function FeaturedSection() {
 
       {/* Featured Section 2 */}
       <section className="relative flex h-screen w-full">
-        <div className="h-screen w-1/2 bg-[#E2E8FF] p-20">
+        <div className="h-screen w-1/2 bg-white p-20">
           <div className="relative h-full w-full">
             <Image
               src="/shop/shop-2.JPG"
@@ -71,10 +72,11 @@ export default async function FeaturedSection() {
             />
 
             <Link href={`/product/${firstProduct.handle}`}>
-              <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center rounded-lg bg-[#3E54A4]">
-                <p className="text-center text-sm text-white">
-                  BLUE EYES ® / {secondProduct.title} <br /> SHOP NOW
-                </p>
+              <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center  bg-[#3E54A4] hover:bg-blue-400">
+                <div className="text-center text-sm text-white  ">
+                  <p>BLUE EYES ® / {secondProduct.title}</p>
+                  <p className="inline-block border-b-[1px] border-white uppercase">Shop Now</p>
+                </div>
               </div>
             </Link>
           </div>

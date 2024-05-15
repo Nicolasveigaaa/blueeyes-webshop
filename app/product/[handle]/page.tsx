@@ -76,8 +76,8 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
 
-      <div className="h-full w-full">
-        <div className="flex flex-col bg-gray-200 md:flex-row ">
+      <div className="h-full w-full bg-white">
+        <div className="flex flex-col  md:flex-row ">
           <div className="h-full w-full">
             <Suspense
               fallback={
@@ -90,22 +90,12 @@ export default async function ProductPage({ params }: { params: { handle: string
                     <Image src={images.url} alt={images.altText} fill />
                   </div>
                 ))}
-                {product.images.map((images) => (
-                  <div className="relative grid h-[600px]">
-                    <Image src={images.url} alt={images.altText} fill />
-                  </div>
-                ))}
-                {product.images.map((images) => (
-                  <div className="relative grid h-[600px]">
-                    <Image src={images.url} alt={images.altText} fill />
-                  </div>
-                ))}
               </div>
             </Suspense>
           </div>
 
           <div className="relative  w-full lg:w-1/2">
-            <div className="sticky right-0 top-0 h-screen w-full bg-gray-400 p-8 md:p-12 ">
+            <div className="sticky right-0 top-0 h-screen w-full p-8 md:p-12 ">
               <ProductDescription product={product} />
             </div>
           </div>
