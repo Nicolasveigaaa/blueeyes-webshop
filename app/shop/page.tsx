@@ -4,6 +4,7 @@ const page = () => {
   return (
     <div className="h-screen w-full">
       <HoleShop />
+      <p>yeah</p>
     </div>
   );
 };
