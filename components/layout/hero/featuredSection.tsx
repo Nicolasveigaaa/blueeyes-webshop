@@ -46,7 +46,7 @@ export default async function FeaturedSection() {
                 fill
               />
 
-              <div className="absolute bottom-20 left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-gray-900">
+              <div className="absolute bottom-20 left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]">
                 <Link href={`/product/${firstProduct.handle}`}>
                   <p className="text-center text-sm text-white">
                     BLUE EYES ® / {firstProduct.title} <br /> SHOP NOW
@@ -63,20 +63,20 @@ export default async function FeaturedSection() {
         <div className="h-screen w-1/2 bg-[#E2E8FF] p-20">
           <div className="relative h-full w-full">
             <Image
-              src="/shop/shop-1.JPG"
+              src="/shop/shop-2.JPG"
               alt={`image of model wearing ${firstProduct.title}`}
               className="object-cover"
               quality={100}
               fill
             />
 
-            <div className="absolute bottom-20 left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-gray-900">
-              <Link href={`/product/${firstProduct.handle}`}>
+            <Link href={`/product/${firstProduct.handle}`}>
+              <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center rounded-lg bg-[#3E54A4]">
                 <p className="text-center text-sm text-white">
                   BLUE EYES ® / {secondProduct.title} <br /> SHOP NOW
                 </p>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -93,3 +93,4 @@ export default async function FeaturedSection() {
     </>
   );
 }
+2;

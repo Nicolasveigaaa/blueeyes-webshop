@@ -24,12 +24,9 @@ export default async function HoleShop() {
                 />
               </div>
 
-              <div className="bottom-0 px-4 py-2 text-sm">
+              <div className="bottom-0 px-6 py-2 text-[12px]">
                 <h3 className="font-regular">{products.title}</h3>
-                <p className="font-light">
-                  {products.priceRange.maxVariantPrice.amount}{' '}
-                  {products.priceRange.maxVariantPrice.currencyCode}
-                </p>
+                <p className="font-light">{products.priceRange.minVariantPrice.amount} kr</p>
               </div>
             </Link>
           </li>
