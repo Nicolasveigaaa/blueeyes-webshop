@@ -1,5 +1,5 @@
-import Test from 'components/Test';
-import FeaturedSection from 'components/layout/featuredSection';
+import FeaturedSection from 'components/layout/hero/featuredSection';
+import Test from 'components/layout/shop/HomepageShop';
 import Image from 'next/image';
 
 export const metadata = {
