@@ -17,3 +17,7 @@ button {
 body::-webkit-scrollbar {
   display: none;
 }
+
+h1 {
+  @apply text-xl;
+}

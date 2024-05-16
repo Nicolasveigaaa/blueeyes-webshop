@@ -13,41 +13,34 @@ import { menuLinks } from 'lib/menuLinks';
 export default async function Navbar() {
   return (
     <header>
-      <nav className="fixed top-0 z-20 flex w-full items-center justify-between p-6 ">
+      <nav className="fixed top-0 z-20 flex w-full items-center justify-between p-6">
         <div className="block flex-none md:hidden">{/* mobile nav */}</div>
 
         <div className="flex w-full items-center justify-between">
-          <div className="flex w-full md:w-1/3">
+          <div className="flex w-1/3">
             <Link
               href="/"
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex flex-row items-center gap-2 text-lg font-medium uppercase">
-                <Image
-                  src="/icons/eye.svg"
-                  alt="blue eyes logo"
-                  width={30}
-                  height={30}
-                  className="
-                mix-blend-difference"
-                />
+                <Image src="/icons/eye.svg" alt="blue eyes logo" width={30} height={30} />
                 {SITE_NAME}
               </div>
             </Link>
           </div>
 
-          <div className="hidden items-center justify-between bg-white px-8 py-4 shadow-md md:flex md:w-1/4">
+          <div className="hidden w-4/12 items-center justify-between bg-white bg-opacity-95 px-8 py-4 opacity-100 shadow-md backdrop-blur-[.5px] md:flex 2xl:w-3/12">
             <ul className="flex gap-8">
               {menuLinks.map((link, index) => (
                 <li key={index}>
-                  <Link href={`/${link.url}`} className="hover:text-gray-600">
+                  <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <div className="translate-y-[2px]">
+            <div className=" translate-y-[2px]">
               <Suspense fallback={<OpenCart />}>
                 <Cart />
               </Suspense>

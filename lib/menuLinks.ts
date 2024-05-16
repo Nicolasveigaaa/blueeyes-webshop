@@ -1,6 +1,22 @@
 export const menuLinks = [
-  { url: 'about', name: 'About' },
-  { url: 'shop', name: 'Shop' },
-  { url: 'gallery', name: 'Gallery' },
-  { url: 'contact', name: 'Contact' }
+  { url: 'pages/about', name: 'About' },
+  { url: 'pages/shop', name: 'Shop' },
+  { url: 'pages/gallery', name: 'Gallery' },
+  { url: 'pages/contact', name: 'Contact' }
+];
+
+export const menuLinksFooter = [
+  { url: 'pages/about', name: 'About' },
+  { url: 'pages/shop', name: 'Shop' },
+  { url: 'pages/gallery', name: 'Gallery' },
+  { url: 'pages/contact', name: 'Contact' },
+  { url: 'pages/info', name: 'Info' },
+  { url: 'pages/contact', name: 'Support' }
+];
+
+export const socialLinks = [
+  { url: 'pages/about', name: 'Instagram' },
+  { url: 'pages/shop', name: 'Shop' },
+  { url: 'pages/gallery', name: 'Gallery' },
+  { url: 'pages/contact', name: 'Contact' }
 ];

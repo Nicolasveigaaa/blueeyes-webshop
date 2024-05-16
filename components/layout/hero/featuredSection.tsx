@@ -13,8 +13,8 @@ export default async function FeaturedSection() {
   return (
     <>
       {/* HERO / Featured Section 1 */}
-      <section className="flex h-[200vh] w-full">
-        <div className="sticky top-0 h-screen w-1/2">
+      <section className="flex w-full flex-col md:h-[200vh] md:flex-row">
+        <div className="sticky top-0 hidden h-screen w-full lg:block lg:w-1/2">
           <Image
             src="/bg-billeder/bg-3.JPG"
             alt="background image showing model with Blue Eyes product"
@@ -24,22 +24,22 @@ export default async function FeaturedSection() {
           />
         </div>
 
-        <div className="flex w-1/2 flex-col justify-between">
-          <div className="h-screen bg-[#3E54A4] px-10 py-20 text-white">
+        <div className="flex w-full flex-col justify-between lg:w-1/2">
+          <div className="h-[50vh] bg-[#3E54A4] px-10 py-20 text-white md:h-screen">
             <h1 className="flex h-full items-center justify-between text-4xl font-bold uppercase xl:px-20 xl:text-6xl">
               <span>Feeling</span> <span>Blue?</span>
             </h1>
 
-            <Link href="/" className="inline-flex w-full flex-col items-center">
+            <Link href="/pages/shop" className="inline-flex w-full flex-col items-center">
               <p className="uppercase">Shop Now</p>
               <span className="h-[1px] w-24 bg-white"></span>
             </Link>
           </div>
 
-          <div className="h-screen bg-white p-20">
+          <div className="h-[50vh] bg-white p-6 md:h-screen md:p-20">
             <div className="relative h-full w-full">
               <Image
-                src="/shop/shop-1.JPG"
+                src="/shop/featured.JPG"
                 alt={`image of model wearing ${firstProduct.title}`}
                 className="object-cover"
                 quality={100}
@@ -47,10 +47,10 @@ export default async function FeaturedSection() {
               />
 
               <Link href={`/product/${firstProduct.handle}`}>
-                <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center  bg-[#3E54A4] hover:bg-blue-400">
+                <div className="absolute bottom-20 left-1/2 flex h-20 w-[90%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]  hover:bg-blue-400 md:w-[60%]">
                   <div className="text-center text-sm text-white  ">
                     <p>BLUE EYES ® / {secondProduct.title}</p>
-                    <p className="inline-block border-b-[1px] border-white uppercase">Shop Now</p>
+                    <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
                   </div>
                 </div>
               </Link>
@@ -60,11 +60,11 @@ export default async function FeaturedSection() {
       </section>
 
       {/* Featured Section 2 */}
-      <section className="relative flex h-screen w-full">
-        <div className="h-screen w-1/2 bg-white p-20">
+      <section className="relative flex h-screen w-full flex-col lg:flex-row">
+        <div className="mt-[-24px] h-[50vh] w-full bg-white p-6 md:mt-0 md:h-screen md:w-1/2 md:p-20">
           <div className="relative h-full w-full">
             <Image
-              src="/shop/shop-2.JPG"
+              src="/shop/featured3.JPG"
               alt={`image of model wearing ${firstProduct.title}`}
               className="object-cover"
               quality={100}
@@ -75,14 +75,14 @@ export default async function FeaturedSection() {
               <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center  bg-[#3E54A4] hover:bg-blue-400">
                 <div className="text-center text-sm text-white  ">
                   <p>BLUE EYES ® / {secondProduct.title}</p>
-                  <p className="inline-block border-b-[1px] border-white uppercase">Shop Now</p>
+                  <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
                 </div>
               </div>
             </Link>
           </div>
         </div>
 
-        <div className="relative h-screen w-1/2">
+        <div className="relative h-full w-full md:w-1/2">
           <Image
             src="/bg-billeder/bg-4.JPG"
             alt="background image of blue eyes products"

@@ -12,11 +12,11 @@ export default async function HomepageShop() {
 
   return (
     <>
-      <ul className="grid grid-cols-4 gap-[1px] overflow-x-auto">
+      <ul className="grid grid-cols-2 gap-[1px] overflow-x-auto lg:grid-cols-4">
         {products.map((products) => (
           <li key={products.handle} className="">
             <Link className="relative h-full w-full" href={`/product/${products.handle}`}>
-              <div className="relative h-[400px] 2xl:h-[600px]">
+              <div className="relative h-[220px] lg:h-[400px] 2xl:h-[600px]">
                 <Image
                   src={products.featuredImage.url}
                   alt={`product picture showing ${products.title}`}

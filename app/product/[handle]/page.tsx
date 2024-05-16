@@ -20,7 +20,7 @@ export async function generateMetadata({
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
 
   return {
-    title: product.seo.title || product.title,
+    title: `${product.title} | blueeyes-icu.com `,
     description: product.seo.description || product.description,
     robots: {
       index: indexable,
@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: { params: { handle: string
               <div className="grid grid-cols-2">
                 {product.images.map((images) => (
                   <div className="relative grid h-[600px]">
-                    <Image src={images.url} alt={images.altText} fill />
+                    <Image src={images.url} alt={images.altText} fill className="object-coverx" />
                   </div>
                 ))}
               </div>
