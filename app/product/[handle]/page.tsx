@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: { params: { handle: string
               <div className="grid grid-cols-2">
                 {product.images.map((images) => (
                   <div className="relative grid h-[600px]">
-                    <Image src={images.url} alt={images.altText} fill className="object-coverx" />
+                    <Image src={images.url} alt={images.altText} fill className="object-cover" />
                   </div>
                 ))}
               </div>
