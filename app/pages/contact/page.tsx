@@ -13,8 +13,8 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <section className="flex w-full">
-        <div className="sticky top-0 h-screen w-1/2">
+      <section className="flex w-full flex-col lg:flex-row">
+        <div className="sticky top-0 h-screen w-full lg:w-1/2">
           <Image
             src="/bg-billeder/bil.JPG"
             alt="background image showing model with Blue Eyes product"
@@ -23,7 +23,7 @@ const page = () => {
           />
         </div>
 
-        <div className="my-auto w-1/2 pt-28 2xl:pt-0">
+        <div className="my-auto w-full pt-28 lg:w-1/2 2xl:pt-0">
           <div className="flex flex-col gap-12 px-28">
             <h1>Contact</h1>
 
