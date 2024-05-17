@@ -41,8 +41,8 @@ export type Image = {
 };
 
 export type Menu = {
-  title: string;
-  path: string;
+  name: string;
+  url: string;
 };
 
 export type Money = {

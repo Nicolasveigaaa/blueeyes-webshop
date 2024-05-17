@@ -6,9 +6,11 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Menu } from 'lib/shopify/types';
 
-export default function MobileMenu({ menu }: { menu: Menu[] }) {
+// menu link import
+import { menuLinksMobile } from 'lib/menuLinks';
+
+export default function MobileMenu() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -30,13 +32,13 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   }, [pathname, searchParams]);
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white"
+        className="flex items-center justify-center text-black transition-colors md:hidden"
       >
-        <Bars3Icon className="h-4" />
+        <Bars3Icon className="h-6" />
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
@@ -60,35 +62,37 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6 dark:bg-black">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6">
               <div className="p-4">
                 <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white"
+                  className="relative z-10 flex items-center justify-center text-black transition-colors"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
-                  <XMarkIcon className="h-6" />
+                  <XMarkIcon className="h-6 transition-all ease-in-out hover:rotate-45 hover:scale-110" />
                 </button>
 
-                {menu.length ? (
-                  <ul className="flex w-full flex-col">
-                    {menu.map((item: Menu) => (
-                      <li
-                        className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
-                        key={item.title}
-                      >
-                        <Link href={item.path} onClick={closeMobileMenu}>
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-center">
+                  {menuLinksMobile.length ? (
+                    <ul className="flex w-full flex-col items-center">
+                      {menuLinksMobile.map((link, index) => (
+                        <li
+                          className="py-2 text-4xl text-black transition-colors hover:underline"
+                          key={index}
+                        >
+                          <Link href={link.url} onClick={closeMobileMenu}>
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
               </div>
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
       </Transition>
-    </>
+    </div>
   );
 }

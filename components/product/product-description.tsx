@@ -15,7 +15,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
   return (
     <>
-      <div className="mb-6 mt-36 flex flex-col">
+      <div className="mb-6 flex flex-col md:mt-36">
         <h1 className="mb-2">{product.title}</h1>
         <p>{product.priceRange.maxVariantPrice.amount} kr</p>
       </div>

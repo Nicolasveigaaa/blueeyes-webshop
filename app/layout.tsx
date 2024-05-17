@@ -37,6 +37,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en" className={GeistSans.variable}>
       <body className="bg-white text-black">
         <Navbar />
+
         <main>{children}</main>
         <Footer />
       </body>

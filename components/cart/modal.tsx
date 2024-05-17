@@ -66,11 +66,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
               <div className="flex items-center justify-between">
                 <p className="">My Cart</p>
 
-                <button
-                  aria-label="Close cart"
-                  onClick={closeCart}
-                  className="transition-all hover:rotate-90"
-                >
+                <button aria-label="Close cart" onClick={closeCart} className="transition-all">
                   <CloseCart />
                 </button>
               </div>

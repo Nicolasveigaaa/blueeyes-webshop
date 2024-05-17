@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
       <section className="flex w-full">
-        <div className="my-auto w-1/2 pt-28">
+        <div className="my-auto w-1/2 pt-28 2xl:pt-0">
           <div className="flex flex-col gap-12 px-28">
             <h1>About</h1>
 
@@ -37,7 +37,7 @@ const page = () => {
 
         <div className="sticky top-0 h-screen w-1/2">
           <Image
-            src="/public/bg-billeder/hest.JPG"
+            src="/bg-billeder/hest.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill

@@ -13,8 +13,8 @@ export default async function FeaturedSection() {
   return (
     <>
       {/* HERO / Featured Section 1 */}
-      <section className="flex w-full flex-col md:h-[200vh] md:flex-row">
-        <div className="sticky top-0 hidden h-screen w-full lg:block lg:w-1/2">
+      <section className="flex w-full flex-col lg:h-[200vh] lg:flex-row">
+        <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-screen lg:w-1/2">
           <Image
             src="/bg-billeder/bg-3.JPG"
             alt="background image showing model with Blue Eyes product"
@@ -25,9 +25,9 @@ export default async function FeaturedSection() {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-between lg:w-1/2">
-          <div className="h-[50vh] bg-[#3E54A4] px-10 py-20 text-white md:h-screen">
-            <h1 className="flex h-full items-center justify-between text-4xl font-bold uppercase xl:px-20 xl:text-6xl">
+        <div className="order-1 flex h-[90vh] w-full flex-col justify-between lg:order-2 lg:h-[200vh] lg:w-1/2">
+          <div className="h-full bg-[#3E54A4] px-10 py-20 text-white lg:h-1/2">
+            <h1 className="flex h-full items-center justify-between text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
               <span>Feeling</span> <span>Blue?</span>
             </h1>
 
@@ -37,7 +37,7 @@ export default async function FeaturedSection() {
             </Link>
           </div>
 
-          <div className="h-[50vh] bg-white p-6 md:h-screen md:p-20">
+          <div className="hidden h-1/2 bg-white p-6 lg:block lg:p-20">
             <div className="relative h-full w-full">
               <Image
                 src="/shop/featured.JPG"
@@ -47,9 +47,9 @@ export default async function FeaturedSection() {
               />
 
               <Link href={`/product/${firstProduct.handle}`}>
-                <div className="absolute bottom-20 left-1/2 flex h-20 w-[90%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]  hover:bg-blue-400 md:w-[60%]">
+                <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]  hover:bg-blue-400 xl:w-[60%]">
                   <div className="text-center text-sm text-white  ">
-                    <p>BLUE EYES ® / {secondProduct.title}</p>
+                    <p>BLUE EYES ® / {firstProduct.title}</p>
                     <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
                   </div>
                 </div>
@@ -60,18 +60,18 @@ export default async function FeaturedSection() {
       </section>
 
       {/* Featured Section 2 */}
-      <section className="relative flex h-screen w-full flex-col lg:flex-row">
-        <div className="mt-[-24px] h-[50vh] w-full bg-white p-6 md:mt-0 md:h-screen md:w-1/2 md:p-20">
+      <section className="relative hidden h-screen w-full flex-col lg:flex lg:flex-row">
+        <div className="mt-[-24px] h-full w-full bg-white p-6 lg:mt-0 lg:w-1/2 lg:p-20">
           <div className="relative h-full w-full">
             <Image
               src="/shop/featured3.JPG"
-              alt={`image of model wearing ${firstProduct.title}`}
+              alt={`image of model wearing ${secondProduct.title}`}
               className="object-cover"
               fill
             />
 
-            <Link href={`/product/${firstProduct.handle}`}>
-              <div className="absolute bottom-20 left-1/2 flex h-20 w-[60%] -translate-x-1/2 transform flex-col justify-center  bg-[#3E54A4] hover:bg-blue-400">
+            <Link href={`/product/${secondProduct.handle}`}>
+              <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4] hover:bg-blue-400  xl:w-[60%]">
                 <div className="text-center text-sm text-white  ">
                   <p>BLUE EYES ® / {secondProduct.title}</p>
                   <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
@@ -81,7 +81,7 @@ export default async function FeaturedSection() {
           </div>
         </div>
 
-        <div className="relative h-full w-full md:w-1/2">
+        <div className="relative h-full w-1/2">
           <Image
             src="/bg-billeder/bg-4.JPG"
             alt="background image of blue eyes products"
@@ -93,4 +93,3 @@ export default async function FeaturedSection() {
     </>
   );
 }
-2;
