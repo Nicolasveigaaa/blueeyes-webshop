@@ -84,9 +84,9 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
               }
             >
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-1 gap-[1px] md:grid-cols-2">
                 {product.images.map((images) => (
-                  <div className="relative grid h-[600px]">
+                  <div className="relative h-[600px]">
                     <Image src={images.url} alt={images.altText} fill className="object-cover" />
                   </div>
                 ))}
@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             </Suspense>
           </div>
 
-          <div className="relative  w-full lg:w-1/2">
+          <div className="relative w-full lg:w-1/2">
             <div className="sticky right-0 top-0 h-screen w-full p-8 md:p-12 ">
               <ProductDescription product={product} />
             </div>
