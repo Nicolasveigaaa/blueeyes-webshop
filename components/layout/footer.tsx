@@ -1,5 +1,5 @@
 import Newsletter from 'components/Newsletter';
-import { menuLinksFooter } from 'lib/menuLinks';
+import { footerEkstra, menuLinks } from 'lib/menuLinks';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex h-[55vh] w-full flex-col justify-between bg-white">
+    <footer className="flex w-full flex-col justify-between bg-white lg:h-[70vh] 2xl:h-[55vh]">
       <div className="mx-auto mt-20 grid h-full w-10/12 grid-cols-3 text-lg">
         <div className="flex flex-col gap-4 border-y pt-16">
           <h4 className="text-center">Blue Eyes</h4>
@@ -46,8 +46,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className=" mx-auto mb-10 w-10/12">
-        <div className="my-16 flex  flex-col justify-between md:flex-row">
+      <div className="mx-auto mb-10 w-10/12 ">
+        <div className="my-16 flex flex-col items-center justify-between md:flex-row">
           <Link href="/" className="flex w-full items-center justify-center md:w-auto">
             <div className="flex items-center gap-6">
               <Image src="/icons/eye.svg" alt="blue eyes logo" width={30} height={30} />
@@ -55,9 +55,9 @@ export default function Footer() {
             </div>
           </Link>
 
-          <div>
+          <div className="flex  md:w-auto">
             <ul className="flex gap-8">
-              {menuLinksFooter.map((link, index) => (
+              {menuLinks.map((link, index) => (
                 <li key={index}>
                   <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
                     {link.name}
@@ -67,14 +67,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          <button>
-            kr DKK <span>v</span>
-          </button>
+          <div className="flex  md:w-auto">
+            <ul className="flex gap-8">
+              {footerEkstra.map((link, index) => (
+                <li key={index}>
+                  <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="flex justify-center">
-          <p className="text-sm font-light ">
-            @{currentYear} <span className="font-medium ">blue eyes icu</span>, all rights reserved
+          <p className="text-sm font-light">
+            @{currentYear} <span className="font-medium">blue eyes icu</span>, all rights reserved
           </p>
         </div>
       </div>

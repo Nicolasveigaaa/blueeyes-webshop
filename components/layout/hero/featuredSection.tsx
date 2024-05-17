@@ -21,6 +21,7 @@ export default async function FeaturedSection() {
             className="object-cover"
             quality={100}
             fill
+            priority={true}
           />
         </div>
 
@@ -42,7 +43,6 @@ export default async function FeaturedSection() {
                 src="/shop/featured.JPG"
                 alt={`image of model wearing ${firstProduct.title}`}
                 className="object-cover"
-                quality={100}
                 fill
               />
 
@@ -67,7 +67,6 @@ export default async function FeaturedSection() {
               src="/shop/featured3.JPG"
               alt={`image of model wearing ${firstProduct.title}`}
               className="object-cover"
-              quality={100}
               fill
             />
 
@@ -87,7 +86,6 @@ export default async function FeaturedSection() {
             src="/bg-billeder/bg-4.JPG"
             alt="background image of blue eyes products"
             className="object-cover"
-            quality={100}
             fill
           />
         </div>
