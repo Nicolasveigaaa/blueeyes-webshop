@@ -32,7 +32,12 @@ export default function Navbar() {
           <ul className="hidden gap-8 lg:flex">
             {menuLinks.map((link, index) => (
               <li key={index}>
-                <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
+                <Link
+                  href={link.url}
+                  className="underline-offset-2 hover:underline"
+                  target={link.openNewSite ? '_blank' : ''}
+                  rel={link.openNewSite ? 'noreferrer noopener' : ''}
+                >
                   {link.name}
                 </Link>
               </li>

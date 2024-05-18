@@ -22,7 +22,7 @@ export default function Footer() {
           <ul className="flex items-center justify-center gap-4 text-sm font-light">
             {socialLinks.map((socials) => (
               <li>
-                <Link href={socials.url} className="underline-offset-2 hover:underline">
+                <Link href={socials.url} target="_blank" rel="noopener noreferrer">
                   <Image
                     src={`/icons/${socials.icon}`}
                     alt={`${socials.name} link`}
@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/" className="underline-offset-2 hover:underline">
+              <Link href="/">
                 <Image src="/icons/Tiktok.svg" alt="Tiktok link" width={20} height={20} />
               </Link>
             </li>
@@ -70,7 +70,12 @@ export default function Footer() {
             <ul className="flex gap-6 md:gap-8">
               {menuLinks.map((link) => (
                 <li>
-                  <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
+                  <Link
+                    href={link.url}
+                    className="underline-offset-2 hover:underline"
+                    target={link.openNewSite ? '_blank' : ''}
+                    rel={link.openNewSite ? 'noreferrer noopener' : ''}
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -82,7 +87,7 @@ export default function Footer() {
             <ul className="flex gap-6 md:gap-8">
               {footerEkstra.map((link, index) => (
                 <li key={index}>
-                  <Link href={`/${link.url}`} className="underline-offset-2 hover:underline">
+                  <Link href={link.url} className="underline-offset-2 hover:underline">
                     {link.name}
                   </Link>
                 </li>
