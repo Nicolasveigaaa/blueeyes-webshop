@@ -3,7 +3,7 @@ import Image from 'next/image';
 const phoneNumber = 'tel:+4561728989';
 
 export const metadata = {
-  title: 'Contact | blueeyes-icu.com ',
+  title: 'Contact',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'

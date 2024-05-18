@@ -104,6 +104,7 @@ export default function MobileMenu() {
                                 alt={`${socials.name} link`}
                                 width={25}
                                 height={25}
+                                className="object-fit"
                               />
                             </Link>
                           </li>
@@ -120,6 +121,7 @@ export default function MobileMenu() {
                               alt="Tiktok link"
                               width={20}
                               height={20}
+                              className="object-fit"
                             />
                           </Link>
                         </li>

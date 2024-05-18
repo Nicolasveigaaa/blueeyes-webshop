@@ -1,7 +1,7 @@
 import HoleShop from 'components/layout/shop/HoleShop';
 
 export const metadata = {
-  title: 'Shop | blueeyes-icu.com ',
+  title: 'Shop',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'

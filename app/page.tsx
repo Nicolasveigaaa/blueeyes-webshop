@@ -17,12 +17,12 @@ export default function HomePage() {
       <FeaturedSection />
 
       {/* Shop Section */}
-      <section className="my-10 h-full sm:my-20 ">
+      <section className="my-20">
         <HomepageShop />
       </section>
 
       {/* CTA Section */}
-      <section className="relative h-[400px] sm:h-[600px] md:h-[750px] lg:h-[800px]">
+      <section className="relative h-[400px] sm:h-[600px] md:h-[750px] lg:h-[800px] 2xl:h-[900px]">
         <Image
           src="/bg-billeder/hav.JPG"
           alt="background image of blue eyes products"

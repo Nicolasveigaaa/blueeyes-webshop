@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="flex h-[550px] w-full flex-col justify-between bg-white">
-      <div className="mx-auto mt-10 grid h-full w-10/12 grid-cols-1 text-lg sm:mt-20 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-20 grid h-full w-10/12 grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-3">
         <div className="hidden flex-col gap-4 border-y lg:flex lg:pt-16">
           <h4 className="text-center">Blue Eyes</h4>
           <p className="mx-auto w-8/12 text-center text-sm font-light">
@@ -26,15 +26,22 @@ export default function Footer() {
                   <Image
                     src={`/icons/${socials.icon}`}
                     alt={`${socials.name} link`}
-                    width={25}
-                    height={25}
+                    width={30}
+                    height={30}
+                    className="object-fit"
                   />
                 </Link>
               </li>
             ))}
             <li>
               <Link href="/">
-                <Image src="/icons/Tiktok.svg" alt="Tiktok link" width={20} height={20} />
+                <Image
+                  src="/icons/Tiktok.svg"
+                  alt="Tiktok link"
+                  width={25}
+                  height={25}
+                  className="object-fit"
+                />
               </Link>
             </li>
           </ul>
@@ -60,14 +67,26 @@ export default function Footer() {
             href="/"
             className="flex w-full items-center justify-center md:w-auto md:justify-start"
           >
-            <div className="flex items-center gap-6">
-              <Image src="/icons/eye.svg" alt="blue eyes logo" width={30} height={30} />
-              <Image src="/icons/eye.svg" alt="blue eyes logo" width={30} height={30} />
+            <div className="flex items-center gap-7">
+              <Image
+                src="/icons/eye.svg"
+                alt="blue eyes logo"
+                width={35}
+                height={35}
+                className="object-fit"
+              />
+              <Image
+                src="/icons/eye.svg"
+                alt="blue eyes logo"
+                width={35}
+                height={35}
+                className="object-fit"
+              />
             </div>
           </Link>
 
           <div className="flex justify-center md:w-auto">
-            <ul className="flex gap-6 md:gap-8">
+            <ul className="flex gap-8">
               {menuLinks.map((link) => (
                 <li>
                   <Link

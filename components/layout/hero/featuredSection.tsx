@@ -25,7 +25,7 @@ export default async function FeaturedSection() {
           />
         </div>
 
-        <div className="order-1 flex h-[90dvh] w-full flex-col justify-between lg:order-2 lg:h-[200vh] lg:w-1/2">
+        <div className="order-1 flex h-[80vh] w-full flex-col justify-between lg:order-2 lg:h-[200vh] lg:w-1/2">
           <div className="h-full bg-[#3E54A4] px-10 py-20 text-white lg:h-1/2">
             <h1 className="flex h-full items-center justify-between text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
               <span>Feeling</span> <span>Blue?</span>

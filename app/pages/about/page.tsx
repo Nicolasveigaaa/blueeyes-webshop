@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'About | blueeyes-icu.com ',
+  title: 'About',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'
