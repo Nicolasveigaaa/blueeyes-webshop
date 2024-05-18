@@ -30,7 +30,7 @@ export default function MobileMenu() {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex items-center justify-center text-black transition-colors md:hidden"
+        className="flex items-center justify-center text-black transition-colors"
       >
         <Bars3Icon className="h-6" />
       </button>
@@ -74,7 +74,12 @@ export default function MobileMenu() {
                           className="py-2 text-4xl text-black transition-colors hover:underline"
                           key={index}
                         >
-                          <Link href={link.url} onClick={closeMobileMenu}>
+                          <Link
+                            href={link.url}
+                            onClick={closeMobileMenu}
+                            target={link.openNewSite ? '_blank' : ''}
+                            rel={link.openNewSite ? 'noreferrer noopener' : ''}
+                          >
                             {link.name}
                           </Link>
                         </li>
@@ -87,11 +92,13 @@ export default function MobileMenu() {
                     {socialLinks.length ? (
                       <ul className="mx-auto flex items-center gap-6">
                         {socialLinks.map((socials, index) => (
-                          <li
-                            className="py-2 text-4xl text-black transition-colors hover:underline"
-                            key={index}
-                          >
-                            <Link href={socials.url} className="" onClick={closeMobileMenu}>
+                          <li className="py-2 text-4xl text-black" key={index}>
+                            <Link
+                              href={socials.url}
+                              onClick={closeMobileMenu}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <Image
                                 src={`/icons/${socials.icon}`}
                                 alt={`${socials.name} link`}
@@ -104,8 +111,9 @@ export default function MobileMenu() {
                         <li>
                           <Link
                             href="/"
-                            className="underline-offset-2 hover:underline"
                             onClick={closeMobileMenu}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             <Image
                               src="/icons/Tiktok.svg"
