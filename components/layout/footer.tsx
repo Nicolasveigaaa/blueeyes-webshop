@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 border-r border-t py-8 md:border-b md:py-0 md:pt-16 lg:border">
+        <div className="flex flex-col gap-4 border-t py-8 md:border-b md:border-r md:py-0 md:pt-16 lg:border">
           <h4 className="text-center">Socials</h4>
           <ul className="flex items-center justify-center gap-4 text-sm font-light">
             {socialLinks.map((socials) => (

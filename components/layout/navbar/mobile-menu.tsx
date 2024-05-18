@@ -1,13 +1,14 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment, useEffect, useState } from 'react';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // menu link import
-import { menuLinksMobile } from 'lib/menuLinks';
+import { menuLinksMobile, socialLinks } from 'lib/menuLinks';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +25,8 @@ export default function MobileMenu() {
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
 
-  useEffect(() => {
-    setIsOpen(false);
-  });
-
   return (
-    <div className="relative">
+    <>
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
@@ -59,7 +56,7 @@ export default function MobileMenu() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white bg-opacity-95 pb-6 backdrop-blur-xl">
               <div className="p-4">
                 <button
                   className="relative z-10 flex items-center justify-center text-black transition-colors"
@@ -84,12 +81,49 @@ export default function MobileMenu() {
                       ))}
                     </ul>
                   ) : null}
+
+                  {/* Socials */}
+                  <div className="mt-10 flex w-full justify-center">
+                    {socialLinks.length ? (
+                      <ul className="mx-auto flex items-center gap-6">
+                        {socialLinks.map((socials, index) => (
+                          <li
+                            className="py-2 text-4xl text-black transition-colors hover:underline"
+                            key={index}
+                          >
+                            <Link href={socials.url} className="" onClick={closeMobileMenu}>
+                              <Image
+                                src={`/icons/${socials.icon}`}
+                                alt={`${socials.name} link`}
+                                width={25}
+                                height={25}
+                              />
+                            </Link>
+                          </li>
+                        ))}
+                        <li>
+                          <Link
+                            href="/"
+                            className="underline-offset-2 hover:underline"
+                            onClick={closeMobileMenu}
+                          >
+                            <Image
+                              src="/icons/Tiktok.svg"
+                              alt="Tiktok link"
+                              width={20}
+                              height={20}
+                            />
+                          </Link>
+                        </li>
+                      </ul>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
       </Transition>
-    </div>
+    </>
   );
 }

@@ -19,4 +19,4 @@ export const socialLinks = [
   { url: 'pages/gallery', name: 'Linkedin', icon: 'Linkedin.svg' }
 ];
 
-export const footerEkstra = [{ url: 'pages/info', name: 'Policy info' }];
+export const footerEkstra = [{ url: 'pages/info', name: 'Policies' }];

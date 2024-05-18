@@ -12,8 +12,8 @@ const page = () => {
   return (
     <>
       <section className="flex w-full flex-col lg:flex-row">
-        <div className="my-auto w-full pt-28 lg:w-1/2 2xl:pt-0">
-          <div className="flex flex-col gap-12 px-28">
+        <div className="my-auto w-full py-28 pt-28 lg:w-1/2 lg:py-0 2xl:pt-0">
+          <div className="flex flex-col gap-12 px-8 lg:px-28">
             <h1>Info</h1>
 
             <div className="flex flex-col gap-2">
