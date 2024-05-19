@@ -23,8 +23,6 @@ export default async function HoleShop() {
                   fill
                   className="object-cover"
                 />
-
-                <p>{/* Product avalible sizes */}</p>
               </div>
 
               <div className="bottom-0 px-6 py-2 text-sm">

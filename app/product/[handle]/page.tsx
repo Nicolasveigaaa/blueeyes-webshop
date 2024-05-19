@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { ProductDescription } from 'components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct } from 'lib/shopify';
-import Image from 'next/image';
 import { Suspense } from 'react';
+import ImageGallery from 'components/product/imageGallery';
 
 export async function generateMetadata({
   params
@@ -84,13 +84,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
               }
             >
-              <div className=" grid grid-cols-1 gap-[1px] md:grid-cols-2">
-                {product.images.map((images) => (
-                  <div className="relative h-[600px]">
-                    <Image src={images.url} alt={images.altText} fill className="object-cover" />
-                  </div>
-                ))}
-              </div>
+              <ImageGallery images={product.images} />
             </Suspense>
           </div>
 
