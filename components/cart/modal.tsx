@@ -1,6 +1,7 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
+import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
 import type { Cart } from 'lib/shopify/types';
 import { createUrl } from 'lib/utils';
@@ -62,7 +63,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white p-6 text-black bg-opacity-95 backdrop-blur-xl md:w-[390px]">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white bg-opacity-95 p-6 text-black backdrop-blur-xl md:w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="">My Cart</p>
 
@@ -129,7 +130,10 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                             </Link>
                             <div className="flex h-16 flex-col justify-between">
                               <p className="flex justify-end space-y-2 text-right text-sm">
-                                {item.cost.totalAmount.amount} kr
+                                <Price
+                                  amount={item.cost.totalAmount.amount}
+                                  currencyCode={item.cost.totalAmount.currencyCode}
+                                />
                               </p>
 
                               <div className="ml-auto flex h-9 flex-row items-center ">
@@ -149,7 +153,10 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 ">
                       <p>Taxes</p>
                       <p className="text-right text-base text-black ">
-                        {cart.cost.totalTaxAmount.amount} kr
+                        <Price
+                          amount={cart.cost.totalTaxAmount.amount}
+                          currencyCode={cart.cost.totalTaxAmount.currencyCode}
+                        />
                       </p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 ">
@@ -159,7 +166,10 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 ">
                       <p>Total</p>
                       <p className="text-right text-base text-black ">
-                        {cart.cost.totalAmount.amount} kr
+                        <Price
+                          amount={cart.cost.totalAmount.amount}
+                          currencyCode={cart.cost.totalAmount.currencyCode}
+                        />
                       </p>
                     </div>
                   </div>

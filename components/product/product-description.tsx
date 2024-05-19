@@ -1,23 +1,21 @@
-'use client';
-
 import { Accordion } from 'components/Accordian';
 import { AddToCart } from 'components/cart/add-to-cart';
+import Price from 'components/price';
 import { Product } from 'lib/shopify/types';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { VariantSelector } from './variant-selector';
 
 export function ProductDescription({ product }: { product: Product }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <>
       <div className="mb-6 flex flex-col md:mt-36">
         <h1 className="mb-2">{product.title}</h1>
-        <p>{product.priceRange.maxVariantPrice.amount} kr</p>
+        <p>
+          <Price
+            amount={product.priceRange.maxVariantPrice.amount}
+            currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+          />
+        </p>
       </div>
 
       <p>{product.description}</p>

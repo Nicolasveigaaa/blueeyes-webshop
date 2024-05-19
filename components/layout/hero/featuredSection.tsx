@@ -32,7 +32,7 @@ export default async function FeaturedSection() {
             </h1>
 
             <Link href="/pages/shop" className="inline-flex w-full flex-col items-center">
-              <p className="uppercase">Shop Now</p>
+              <p className="uppercase">Explore More</p>
               <span className="h-[1px] w-24 bg-white"></span>
             </Link>
           </div>

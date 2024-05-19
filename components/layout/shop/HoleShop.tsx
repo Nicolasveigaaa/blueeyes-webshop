@@ -1,3 +1,4 @@
+import Price from 'components/price';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ export default async function HoleShop() {
         {products.map((products) => (
           <li key={products.handle} className="">
             <Link className="relative h-full w-full" href={`/product/${products.handle}`}>
-              <div className="relative h-[190px] min-[400px]:h-[220px] min-[480px]:h-[260px] min-[570px]:h-[290px] sm:h-[310px] 2xl:h-[450px]">
+              <div className="relative h-[200px] min-[400px]:h-[230px] min-[480px]:h-[260px] min-[570px]:h-[290px] sm:h-[320px] 2xl:h-[450px]">
                 <Image
                   src={products.featuredImage.url}
                   alt={`product picture showing ${products.title}`}
@@ -23,12 +24,15 @@ export default async function HoleShop() {
                   className="object-cover"
                 />
 
-                <p>{}</p>
+                <p>{/* Product avalible sizes */}</p>
               </div>
 
               <div className="bottom-0 px-6 py-2 text-sm">
                 <h3 className="font-regular">{products.title}</h3>
-                <p className="font-light">{products.priceRange.minVariantPrice.amount} kr</p>
+                <Price
+                  amount={products.priceRange.maxVariantPrice.amount}
+                  currencyCode={products.priceRange.maxVariantPrice.currencyCode}
+                />
               </div>
             </Link>
           </li>
