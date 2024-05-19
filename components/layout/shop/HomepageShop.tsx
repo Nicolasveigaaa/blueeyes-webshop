@@ -13,26 +13,23 @@ export default async function HomepageShop() {
   return (
     <>
       <ul className="grid grid-cols-2 gap-[1px] overflow-x-auto md:grid-cols-3 lg:grid-cols-4">
-        {products.map((products) => (
-          <li key={products.handle} className="">
-            <Link className="relative h-full w-full" href={`/product/${products.handle}`}>
-              <div className="relative h-[200px] min-[400px]:h-[230px] min-[480px]:h-[260px] min-[570px]:h-[290px] sm:h-[320px] 2xl:h-[450px]">
+        {products.map((product) => (
+          <li key={product.handle} className="relative border-b border-r border-t border-white">
+            <Link className="relative block w-full" href={`/product/${product.handle}`}>
+              <div className="relative w-full" style={{ aspectRatio: '1 / 1.2' }}>
                 <Image
-                  src={products.featuredImage.url}
-                  alt={`product picture showing ${products.title}`}
-                  sizes=""
-                  fill
-                  className="object-cover"
+                  src={product.featuredImage.url}
+                  alt={product.title}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  layout="fill"
+                  className="product-image product-image-front absolute left-0 top-0 h-full w-full object-cover"
                 />
-
-                <p>{/* Product avalible sizes */}</p>
               </div>
-
               <div className="bottom-0 px-6 py-2 text-sm">
-                <h3 className="font-regular">{products.title}</h3>
+                <h3 className="font-regular">{product.title}</h3>
                 <Price
-                  amount={products.priceRange.maxVariantPrice.amount}
-                  currencyCode={products.priceRange.maxVariantPrice.currencyCode}
+                  amount={product.priceRange.maxVariantPrice.amount}
+                  currencyCode={product.priceRange.maxVariantPrice.currencyCode}
                 />
               </div>
             </Link>
