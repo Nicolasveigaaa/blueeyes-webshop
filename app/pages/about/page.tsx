@@ -17,20 +17,16 @@ const page = () => {
             <h1>About</h1>
 
             <p className="text-lg font-light leading-10">
-              Born out of Copenhagen in 2020, Parel Studios began with the simple mission of
-              amplifying the essence of functional design in products - striking the balance between
-              functionality and aesthetics in the space of traditional workwear, lifestyle and
-              activewear.
+              Albert Larsen Founded in the heart of Copenhagen by Albert and his associates,
+              blueeyes.iCu was established in 2023. Driven by a passion for fashion and quality, the
+              brand embodies a unique perspective of the world - our perspective.
             </p>
 
             <p className="text-lg font-light leading-10 text-gray-600">
-              The name Parel comes from the word apparel, and signifies the brands ethos of clothing
-              that works for all ranges of activity. Parel aims to easily offer comfort and
-              confidence in people's daily routines by creating practical, functional apparel with
-              an all-day usability. The name Parel comes from the word apparel, and signifies the
-              brands ethos of clothing that works for all ranges of activity. Parel aims to easily
-              offer comfort and confidence in people's daily routines by creating practical,
-              functional apparel with an all-day usability.
+              The blue eyes symbolize the beauty we aspire to see in the simple and ordinary, while
+              creating a community around the brand with everyone wishing to share the perspective
+              of the blue eyes. Blueeyes.iCu represents our commitment to creating a simple yet
+              captivating brand that catches the eye while embracing the community.
             </p>
           </div>
         </div>

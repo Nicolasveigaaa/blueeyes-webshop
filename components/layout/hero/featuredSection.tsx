@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,9 +32,12 @@ export default async function FeaturedSection() {
               <span>Feeling</span> <span>Blue?</span>
             </h1>
 
-            <Link href="/pages/shop" className="inline-flex w-full flex-col items-center">
+            <Link
+              href="/pages/shop"
+              className="flex w-full items-center justify-center gap-2 underline"
+            >
               <p className="uppercase">Explore More</p>
-              <span className="h-[1px] w-24 bg-white"></span>
+              <ArrowRightIcon width={16} height={16} />
             </Link>
           </div>
 
@@ -50,7 +54,7 @@ export default async function FeaturedSection() {
                 <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]  hover:bg-blue-400 xl:w-[60%]">
                   <div className="text-center text-sm text-white  ">
                     <p>BLUE EYES ® / {firstProduct.title}</p>
-                    <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
+                    <p className="mt-[1px] inline-block uppercase">View Product</p>
                   </div>
                 </div>
               </Link>
@@ -74,7 +78,7 @@ export default async function FeaturedSection() {
               <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4] hover:bg-blue-400  xl:w-[60%]">
                 <div className="text-center text-sm text-white  ">
                   <p>BLUE EYES ® / {secondProduct.title}</p>
-                  <p className="mt-[1px] inline-block uppercase underline">Shop Now</p>
+                  <p className="mt-[1px] inline-block uppercase">View Product</p>
                 </div>
               </div>
             </Link>
