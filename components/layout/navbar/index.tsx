@@ -25,7 +25,7 @@ export default function Navbar() {
                 alt="blue eyes logo"
                 width={30}
                 height={30}
-                className="object-fit"
+                className="object-fit m-1 p-1"
               />
               Blue eyes
             </div>
