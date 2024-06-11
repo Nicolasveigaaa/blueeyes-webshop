@@ -8,7 +8,7 @@ import { VariantSelector } from './variant-selector';
 export function ProductDescription({ product }: { product: Product }) {
   return (
     <>
-      <div className="mb-6 flex flex-col md:mt-36">
+      <div className="mb-6 flex flex-col">
         <h1 className="mb-2">{product.title}</h1>
 
         <Price

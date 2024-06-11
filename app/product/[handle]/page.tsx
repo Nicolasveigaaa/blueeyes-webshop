@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import ImageGallery from 'components/product/imageGallery';
 import { ProductDescription } from 'components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct } from 'lib/shopify';
 import { Suspense } from 'react';
-import ImageGallery from 'components/product/imageGallery';
 
 export async function generateMetadata({
   params
@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           </div>
 
           <div className="relative w-full lg:w-1/2">
-            <div className="sticky right-0 top-0 h-screen w-full p-8 md:p-12 ">
+            <div className="sticky right-0 top-0 flex h-screen w-full flex-col justify-center p-8 md:p-12">
               <ProductDescription product={product} />
             </div>
           </div>

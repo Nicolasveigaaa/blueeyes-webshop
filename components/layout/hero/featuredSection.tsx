@@ -2,12 +2,11 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 export default async function FeaturedSection() {
   const featuredProducts = await getCollectionProducts({ collection: 'frontpage' });
 
-  if (!featuredProducts[0] || !featuredProducts[1]) return notFound();
+  if (!featuredProducts[0] || !featuredProducts[1]) return null;
 
   const [firstProduct, secondProduct] = featuredProducts;
 
@@ -27,18 +26,20 @@ export default async function FeaturedSection() {
         </div>
 
         <div className="order-1 flex h-[80vh] w-full flex-col justify-between lg:order-2 lg:h-[200vh] lg:w-1/2">
-          <div className="h-full bg-[#3E54A4] px-10 py-20 text-white lg:h-1/2">
+          <div className="h-full w-full bg-[#3E54A4] px-10 py-20 text-white lg:h-1/2">
             <h1 className="flex h-full items-center justify-between text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
               <span>Feeling</span> <span>Blue?</span>
             </h1>
 
-            <Link
-              href="/pages/shop"
-              className="flex w-full items-center justify-center gap-2 underline"
-            >
-              <p className="uppercase">Explore More</p>
-              <ArrowRightIcon width={16} height={16} />
-            </Link>
+            <div className="flex items-center justify-center">
+              <Link href="/pages/shop" aria-label="Shop redirect button" className="group">
+                <div className="flex items-center justify-center gap-2 transition-all group-hover:gap-4">
+                  <p className="uppercase">Explore More</p>
+                  <ArrowRightIcon width={16} height={16} />
+                </div>
+                <div className="h-[1px] w-full bg-white"></div>
+              </Link>
+            </div>
           </div>
 
           <div className="hidden h-1/2 bg-white p-6 lg:block lg:p-20">

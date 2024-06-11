@@ -11,7 +11,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className="h-full w-full bg-white">
-      <div className="inset-0 h-28 w-full"></div>
+      <div className="inset-0 h-14 w-full"></div>
       <HoleShop />
     </div>
   );

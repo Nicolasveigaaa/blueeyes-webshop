@@ -15,15 +15,24 @@ export default async function HomepageShop() {
       <ul className="grid grid-cols-2 gap-[1px] overflow-x-auto md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <li key={product.handle} className="relative border-b border-r border-t border-white">
-            <Link className="relative block w-full" href={`/product/${product.handle}`}>
+            <Link className="group relative block w-full" href={`/product/${product.handle}`}>
               <div className="relative w-full" style={{ aspectRatio: '1 / 1.2' }}>
                 <Image
                   src={product.featuredImage.url}
                   alt={product.title}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   layout="fill"
-                  className="product-image product-image-front absolute left-0 top-0 h-full w-full object-cover"
+                  className="product-image-front absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                 />
+                {product.images[1] && (
+                  <Image
+                    src={product.images[1].url}
+                    alt={product.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    layout="fill"
+                    className="product-image-back absolute left-0 top-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                )}
               </div>
               <div className="bottom-0 px-6 py-2 text-sm">
                 <h3 className="font-regular">{product.title}</h3>
