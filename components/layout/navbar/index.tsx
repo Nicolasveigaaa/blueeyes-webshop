@@ -17,16 +17,12 @@ export default function Navbar() {
           <MobileMenu />
         </div>
 
-        <div className="items-center">
+        <div className="flex flex-col justify-center">
           <Link href="/" className="mr-2 inline-flex items-center justify-center lg:mr-6 lg:w-auto">
             <div className="flex h-full flex-row items-center gap-2 text-lg font-medium uppercase">
-              <Image
-                src="/icons/eye.svg"
-                alt="blue eyes logo"
-                width={30}
-                height={30}
-                className="object-fit m-1 p-1"
-              />
+              <div className="relative inline-flex h-[29px] w-[29px] items-center justify-center ">
+                <Image src="/icons/eye.svg" alt="blue eyes logo" fill className="object-fit" />
+              </div>
               Blue eyes
             </div>
           </Link>

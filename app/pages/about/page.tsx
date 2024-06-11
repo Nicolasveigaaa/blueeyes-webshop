@@ -17,15 +17,15 @@ const page = () => {
             <h1>About</h1>
 
             <p className="text-lg font-light leading-10">
-              Albert Larsen Founded in the heart of Copenhagen by Albert and his associates,
-              blueeyes.iCu was established in 2023. Driven by a passion for fashion and quality, the
+              Albert Larsen Founded in the heart of Copenhagen by Albert and his associates, Blue
+              Eyes ICU was established in 2023. Driven by a passion for fashion and quality, the
               brand embodies a unique perspective of the world - our perspective.
             </p>
 
             <p className="text-lg font-light leading-10 text-gray-600">
               The blue eyes symbolize the beauty we aspire to see in the simple and ordinary, while
               creating a community around the brand with everyone wishing to share the perspective
-              of the blue eyes. Blueeyes.iCu represents our commitment to creating a simple yet
+              of the blue eyes. Blue Eyes ICU represents our commitment to creating a simple yet
               captivating brand that catches the eye while embracing the community.
             </p>
           </div>
