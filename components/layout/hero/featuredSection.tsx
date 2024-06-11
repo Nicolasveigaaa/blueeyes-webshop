@@ -52,7 +52,7 @@ export default async function FeaturedSection() {
               />
 
               <Link href={`/product/${firstProduct.handle}`}>
-                <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4]  hover:bg-blue-400 xl:w-[60%]">
+                <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-gray-700 bg-opacity-35  hover:bg-opacity-50 xl:w-[60%]">
                   <div className="text-center text-sm text-white  ">
                     <p>BLUE EYES ® / {firstProduct.title}</p>
                     <p className="mt-[1px] inline-block uppercase">View Product</p>
@@ -76,7 +76,7 @@ export default async function FeaturedSection() {
             />
 
             <Link href={`/product/${secondProduct.handle}`}>
-              <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-[#3E54A4] hover:bg-blue-400  xl:w-[60%]">
+              <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-gray-700 bg-opacity-35  hover:bg-opacity-50  xl:w-[60%]">
                 <div className="text-center text-sm text-white  ">
                   <p>BLUE EYES ® / {secondProduct.title}</p>
                   <p className="mt-[1px] inline-block uppercase">View Product</p>

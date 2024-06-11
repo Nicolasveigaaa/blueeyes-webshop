@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="hidden flex-col gap-4 border-y lg:flex lg:pt-16">
           <h4 className="text-center">Blue Eyes</h4>
           <p className="mx-auto w-8/12 text-center text-sm font-light">
-            lorem sdasjd ffsjf jasf jf fasjf aasfja sfjf sj fsj fa lorem sdasjd ffsjf jasf jf fasjf
-            aasfja sfjf sj fsj fa
+            Since 2023, Blue Eyes has blened fashion and quality with a unique vision, symbolizing
+            simplicity and beauty.
           </p>
         </div>
 

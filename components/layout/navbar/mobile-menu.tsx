@@ -88,7 +88,7 @@ export default function MobileMenu() {
                   ) : null}
 
                   {/* Socials */}
-                  <div className="mt-10 flex w-full justify-center">
+                  <div className="mt-5 flex w-full justify-center">
                     {socialLinks.length ? (
                       <ul className="mx-auto flex items-center gap-6">
                         {socialLinks.map((socials, index) => (

@@ -14,7 +14,7 @@ export const menuLinksMobile = [
 ];
 
 export const socialLinks = [
-  { url: 'https://www.instagram.com/blueeyes.icu/', name: 'Instagram', icon: 'instagram.svg' },
+  { url: 'https://www.instagram.com/blueeyes.icu/', name: 'Instagram', icon: 'Insta.svg' },
   { url: 'https://www.facebook.com/albert.larsen.777', name: 'Facebook', icon: 'Facebook.svg' }
 ];
 // Tiktok is hardcode cause of weird height icon
