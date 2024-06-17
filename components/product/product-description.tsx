@@ -36,8 +36,8 @@ export function ProductDescription({ product }: { product: Product }) {
         <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
       </Suspense>
 
-      <div className="my-8">
-        <ul>
+      <div className="my-10">
+        <ul className="text-sm">
           <li>Free shipping in Denmark</li>
           <li>Free shipping in EU over €100</li>
           <li>Free shipping in Europe over €150</li>

@@ -88,9 +88,9 @@ export default async function ProductPage({ params }: { params: { handle: string
             </Suspense>
           </div>
 
-          <div className="relative h-full w-full  p-8 md:h-screen  md:p-12 lg:w-1/2">
-            <div className="flex flex-col justify-center">
-              <div className="sticky right-0 top-0 h-full w-full overflow-auto">
+          <div className=" h-full w-full lg:w-1/2">
+            <div className="relative p-8 md:h-screen md:p-12">
+              <div className="sticky right-0 top-0 flex h-full w-full flex-col justify-center overflow-auto">
                 <ProductDescription product={product} />
               </div>
             </div>
