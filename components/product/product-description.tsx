@@ -8,9 +8,8 @@ import { VariantSelector } from './variant-selector';
 export function ProductDescription({ product }: { product: Product }) {
   return (
     <>
-      <div className="mb-6 flex flex-col">
+      <div className="mb-6 flex flex-col pt-10">
         <h1 className="mb-2">{product.title}</h1>
-
         <Price
           amount={product.priceRange.maxVariantPrice.amount}
           currencyCode={product.priceRange.maxVariantPrice.currencyCode}
@@ -21,9 +20,9 @@ export function ProductDescription({ product }: { product: Product }) {
 
       <div className="my-12">
         <Accordion
-          titles={['Size Guide', 'Shipping Information']}
+          titles={['Size guide', 'Fit guide']}
           contents={[
-            <p key="1">Here you can add additional information about the product.</p>,
+            <div key="1">Here you can add even more details about the product.</div>,
             <p key="2">Here you can add even more details about the product.</p>
           ]}
         />
@@ -36,6 +35,17 @@ export function ProductDescription({ product }: { product: Product }) {
       <Suspense fallback={null}>
         <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
       </Suspense>
+
+      <div className="my-8">
+        <ul>
+          <li>Free shipping in Denmark</li>
+          <li>Free shipping in EU over €100</li>
+          <li>Free shipping in Europe over €150</li>
+          <li>Free shipping to North America over €200</li>
+          <li>Free shipping to the rest of the world over €250</li>
+          <li>Free exchanges - Easy returns</li>
+        </ul>
+      </div>
     </>
   );
 }

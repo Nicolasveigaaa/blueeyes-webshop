@@ -14,12 +14,12 @@ const page = () => {
       <section className="flex w-full flex-col lg:flex-row">
         <div className="my-auto w-full py-28 lg:w-1/2 2xl:py-0">
           <div className="flex flex-col gap-12 px-8 lg:px-28">
-            <h1>About</h1>
+            <h1>Policies</h1>
 
             <p className="text-lg font-light leading-10">
-              Founded in the heart of Copenhagen by Albert and his associates, Blue Eyes ICU was
-              established in 2023. Driven by a passion for fashion and quality, the brand embodies a
-              unique perspective of the world - our perspective.
+              Albert Larsen Founded in the heart of Copenhagen by Albert and his associates, Blue
+              Eyes ICU was established in 2023. Driven by a passion for fashion and quality, the
+              brand embodies a unique perspective of the world - our perspective.
             </p>
 
             <p className="text-lg font-light leading-10 text-gray-600">
@@ -33,7 +33,7 @@ const page = () => {
 
         <div className="sticky top-0 h-screen w-full lg:w-1/2">
           <Image
-            src="/shop/featured33.JPG"
+            src="/bg-billeder/hest.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
