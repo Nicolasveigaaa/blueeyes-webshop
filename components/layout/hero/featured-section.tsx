@@ -32,17 +32,23 @@ export default async function FeaturedSection() {
             </h1>
 
             <div className="flex items-center justify-center">
-              <Link href="/pages/shop" aria-label="Shop redirect button" className="group">
+              <a
+                href="https://www.gallery.blueeyes-icu.com/"
+                aria-label="gallery redirect button"
+                className="group"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
                 <div className="flex items-center justify-center gap-2 transition-all group-hover:gap-4">
-                  <p className="uppercase">Explore More</p>
+                  <p className="">View the gallery</p>
                   <ArrowRightIcon width={16} height={16} />
                 </div>
                 <div className="h-[1px] w-full bg-white"></div>
-              </Link>
+              </a>
             </div>
           </div>
 
-          <div className="hidden h-1/2 bg-white p-6 lg:block lg:p-20">
+          <div className="hidden h-screen bg-white p-6 lg:block lg:p-20">
             <div className="relative h-full w-full">
               <Image
                 src="/shop/featured.JPG"
@@ -65,9 +71,29 @@ export default async function FeaturedSection() {
       </section>
 
       {/* Featured Section 2 */}
-      <section className="relative hidden h-[100dvh] w-full flex-col lg:flex lg:flex-row">
-        <div className="mt-[-24px] h-full w-full bg-white p-6 lg:mt-0 lg:w-1/2 lg:p-20">
-          <div className="relative h-full w-full">
+      <section className="relative flex h-full w-full flex-col lg:h-[100dvh] lg:flex-row">
+        <div className="h-full bg-white p-6 lg:hidden ">
+          <div className="relative h-[400px] w-full sm:h-[500px] md:h-[600px]">
+            <Image
+              src="/shop/featured.JPG"
+              alt={`image of model wearing ${firstProduct.title}`}
+              className="object-cover"
+              fill
+            />
+
+            <Link href={`/product/${firstProduct.handle}`}>
+              <div className="absolute bottom-[10%] left-1/2 flex h-20 w-[80%] -translate-x-1/2 transform flex-col justify-center bg-gray-700 bg-opacity-35  hover:bg-opacity-50 xl:w-[60%]">
+                <div className="text-center text-sm text-white  ">
+                  <p>BLUE EYES ® / {firstProduct.title}</p>
+                  <p className="mt-[1px] inline-block uppercase">View Product</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <div className="order-2 h-full w-full bg-white p-6 lg:order-1 lg:mt-0 lg:w-1/2 lg:p-20 ">
+          <div className="relative h-[400px] w-full sm:h-[500px] md:h-[600px] lg:h-full">
             <Image
               src="/shop/featured3.JPG"
               alt={`image of model wearing ${secondProduct.title}`}
@@ -86,7 +112,7 @@ export default async function FeaturedSection() {
           </div>
         </div>
 
-        <div className="relative h-full w-1/2">
+        <div className="relative order-1 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:order-2 lg:h-full lg:w-1/2">
           <Image
             src="/bg-billeder/bg-4.JPG"
             alt="background image of blue eyes products"

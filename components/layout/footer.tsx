@@ -1,5 +1,5 @@
-import Newsletter from 'components/Newsletter';
-import { footerEkstra, menuLinks, socialLinks } from 'lib/menuLinks';
+import Newsletter from 'components/newsletter';
+import { footerEkstra, menuLinks, socialLinks } from 'lib/menu-links';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,51 +10,61 @@ export default function Footer() {
     <footer className="flex h-[550px] w-full flex-col justify-between bg-white">
       <div className="mx-auto mt-20 grid h-full w-10/12 grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-3">
         <div className="hidden flex-col gap-4 border-y lg:flex lg:pt-16">
-          <h4 className="text-center">Blue Eyes</h4>
+          <h4 className="text-center">
+            Blueeyes.iCu
+            <sup>
+              <span className="text-[#3E54A4]">©</span>
+            </sup>
+          </h4>
           <p className="mx-auto w-8/12 text-center text-sm font-light">
-            Since 2023, Blue Eyes has blened fashion and quality with a unique vision, symbolizing
-            simplicity and beauty.
+            Since 2023, Blueeyes.iCu has been dedicated to blending fashion and exceptional quality
+            with a vision of unity, simplicity, and quality.
           </p>
         </div>
 
         <div className="flex flex-col gap-4 border-t py-8 md:border-b md:border-r md:py-0 md:pt-16 lg:border">
           <h4 className="text-center">Socials</h4>
           <ul className="flex items-center justify-center gap-4 text-sm font-light">
-            {socialLinks.map((socials) => (
-              <li>
-                <Link href={socials.url} target="_blank" rel="noopener noreferrer">
+            {socialLinks.map((socials, id) => (
+              <li key={id}>
+                <Link
+                  href={socials.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
                   <Image
                     src={`/icons/${socials.icon}`}
                     alt={`${socials.name} link`}
                     width={30}
                     height={30}
-                    className="object-fit"
+                    className="object-fit transition-all group-hover:scale-90"
                   />
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/">
+              <Link href="/" className="group" target="_blank" rel="noopener noreferrer">
                 <Image
                   src="/icons/Tiktok.svg"
                   alt="Tiktok link"
                   width={25}
                   height={25}
-                  className="object-fit"
+                  className="object-fit transition-all group-hover:scale-90"
                 />
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="flex flex-col gap-4 border-y py-8 md:py-0 md:pt-16">
+        <div className="flex w-full flex-col gap-4 border-y py-8 md:py-0 md:pt-16">
           <h4 className="text-center">Newsletter</h4>
 
-          <div className="flex justify-center gap-2">
+          <div className="mx-auto flex w-[80%] justify-center gap-2">
             <div>
               <Newsletter />
               <p className="mt-2 text-center text-sm font-light">
-                Sign up and get 10% off your next order
+                Get notified before a drop so you dont miss out!
               </p>
             </div>
           </div>
@@ -69,45 +79,40 @@ export default function Footer() {
           >
             <div className="flex items-center gap-7">
               <Image
-                src="/icons/eye.svg"
+                src="/icons/eyes-logo.svg"
                 alt="blue eyes logo"
-                width={35}
-                height={35}
-                className="object-fit"
-              />
-              <Image
-                src="/icons/eye.svg"
-                alt="blue eyes logo"
-                width={35}
-                height={35}
+                width={110}
+                height={110}
                 className="object-fit"
               />
             </div>
           </Link>
 
-          <div className="flex justify-center md:w-auto">
+          <div className="flex items-center justify-center md:w-auto">
             <ul className="flex gap-8">
-              {menuLinks.map((link) => (
-                <li>
+              {menuLinks.map((link, index) => (
+                <li key={index}>
                   <Link
                     href={link.url}
-                    className="underline-offset-2 hover:underline"
+                    className="group underline-offset-2"
                     target={link.openNewSite ? '_blank' : ''}
                     rel={link.openNewSite ? 'noreferrer noopener' : ''}
                   >
-                    {link.name}
+                    <p>{link.name}</p>
+                    <div className="inset-0 h-[2px] w-full scale-x-0 rounded-full bg-[#3E54A4] transition-all group-hover:scale-x-100"></div>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex justify-center md:w-auto md:justify-end">
+          <div className="flex items-center justify-center md:w-auto md:justify-end">
             <ul className="flex gap-6 md:gap-8">
               {footerEkstra.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.url} className="underline-offset-2 hover:underline">
-                    {link.name}
+                  <Link href={link.url} className="group">
+                    <p>{link.name}</p>
+                    <div className="inset-0 h-[2px] w-full scale-x-0 rounded-full bg-[#3E54A4] transition-all group-hover:scale-x-100"></div>
                   </Link>
                 </li>
               ))}
@@ -115,9 +120,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex items-center justify-center">
           <p className="pb-10 text-sm font-light md:pb-0">
-            @{currentYear} <span className="font-medium">blue eyes icu</span>, all rights reserved
+            @{currentYear} <span className="font-medium">Blueeyes.iCu</span>, all rights reserved
           </p>
         </div>
       </div>

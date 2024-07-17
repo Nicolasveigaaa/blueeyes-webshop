@@ -8,7 +8,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // menu link import
-import { menuLinksMobile, socialLinks } from 'lib/menuLinks';
+import { menuLinksMobile, socialLinks } from 'lib/menu-links';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);

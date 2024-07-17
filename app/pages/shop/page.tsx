@@ -1,4 +1,4 @@
-import HoleShop from 'components/layout/shop/HoleShop';
+import HoleShop from 'components/layout/shop/hole-shop';
 
 export const metadata = {
   title: 'Shop',

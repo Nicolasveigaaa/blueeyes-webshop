@@ -1,5 +1,4 @@
-import FeaturedSection from 'components/layout/hero/featuredSection';
-import HomepageShop from 'components/layout/shop/HomepageShop';
+import FeaturedSection from 'components/layout/hero/featured-section';
 import Image from 'next/image';
 
 export const metadata = {
@@ -14,12 +13,15 @@ export default function HomePage() {
   return (
     <>
       {/* HERO / Featured Section */}
+
       <FeaturedSection />
 
       {/* Shop Section */}
+      {/*
       <section className="my-20">
         <HomepageShop />
       </section>
+      */}
 
       {/* CTA Section */}
       <section className="relative h-[400px] sm:h-[600px] md:h-[750px] lg:h-[800px] 2xl:h-[900px]">
@@ -37,7 +39,18 @@ export default function HomePage() {
             <span className="flex sm:justify-end">Blue Lifestyle</span>
           </h2>
 
-          <p className="text-[12px] sm:text-sm lg:text-base xl:text-lg">Blue Eyes / Quete 2024</p>
+          <div className="flex gap-2">
+            <div className="flex items-center gap-7">
+              <Image
+                src="/icons/eyes-logo.svg"
+                alt="blue eyes logo"
+                width={80}
+                height={80}
+                className="object-fit"
+              />
+            </div>
+            <p className="text-[12px] sm:text-sm lg:text-base xl:text-lg">{'// 2024©'}</p>
+          </div>
         </div>
       </section>
     </>

@@ -31,7 +31,7 @@ const Newsletter = () => {
             placeholder="email"
             required
           />
-          <button type="submit" className="h-full w-12 hover:bg-gray-200">
+          <button type="submit" className="h-full w-12 transition-all hover:bg-gray-200">
             <ArrowRightIcon width={20} height={20} className="mx-auto" />
           </button>
         </div>

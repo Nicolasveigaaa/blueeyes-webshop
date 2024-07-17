@@ -1,4 +1,4 @@
-import { Accordion } from 'components/Accordian';
+import { Accordion } from 'components/accordian';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Price from 'components/price';
 import { Product } from 'lib/shopify/types';

@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 
 // menu link import
-import { menuLinks } from 'lib/menuLinks';
+import { menuLinks } from 'lib/menu-links';
 
 export default function Navbar() {
   return (
