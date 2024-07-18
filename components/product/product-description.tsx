@@ -1,4 +1,3 @@
-import { Accordion } from 'components/accordian';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Price from 'components/price';
 import { Product } from 'lib/shopify/types';
@@ -19,13 +18,14 @@ export function ProductDescription({ product }: { product: Product }) {
       <p>{product.description}</p>
 
       <div className="my-12">
-        <Accordion
+        {/* <Accordion
           titles={['Size guide', 'Fit guide']}
           contents={[
             <div key="1">Here you can add even more details about the product.</div>,
             <p key="2">Here you can add even more details about the product.</p>
           ]}
         />
+        */}
       </div>
 
       <Suspense fallback={null}>
