@@ -89,8 +89,8 @@ export default async function ProductPage({ params }: { params: { handle: string
           </div>
 
           <div className=" h-full w-full lg:w-1/2">
-            <div className="relative p-8 md:h-screen md:p-12">
-              <div className="sticky right-0 top-0 flex h-full w-full flex-col justify-center overflow-auto">
+            <div className="relative md:h-screen">
+              <div className="sticky right-0 top-0 flex w-full flex-col gap-8 p-8 md:p-12">
                 <ProductDescription product={product} />
               </div>
             </div>

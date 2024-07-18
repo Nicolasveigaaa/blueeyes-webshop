@@ -1,4 +1,4 @@
-import Newsletter from 'components/newsletter';
+import Newsletter from 'components/Newsletter';
 import { footerEkstra, menuLinks, socialLinks } from 'lib/menu-links';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="flex h-[550px] w-full flex-col justify-between bg-white">
-      <div className="mx-auto mt-20 grid h-full w-10/12 grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-10 grid h-full w-10/12 grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-3">
         <div className="hidden flex-col gap-4 border-y lg:flex lg:pt-16">
           <h4 className="text-center">
             Blueeyes.iCu
@@ -72,18 +72,18 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mb-10 w-10/12 ">
-        <div className="my-16 grid grid-cols-1 items-center gap-8 md:grid-cols-3 md:gap-0">
+        <div className="my-16 grid grid-cols-1 items-center gap-8 text-sm md:grid-cols-3 md:gap-0">
           <Link
             href="/"
-            className="flex w-full items-center justify-center md:w-auto md:justify-start"
+            className="flex h-full w-full items-center justify-center md:w-auto md:justify-start"
           >
-            <div className="flex items-center gap-7">
+            <div className="flex h-full items-center gap-7">
               <Image
                 src="/icons/eyes-logo.svg"
                 alt="blue eyes logo"
                 width={110}
                 height={110}
-                className="object-fit"
+                className="object-fit h-full"
               />
             </div>
           </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center justify-center md:w-auto md:justify-end">
-            <ul className="flex gap-6 md:gap-8">
+            <ul className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
               {footerEkstra.map((link, index) => (
                 <li key={index}>
                   <Link href={link.url} className="group">
@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-center">
-          <p className="pb-10 text-sm font-light md:pb-0">
+          <p className="pb-10 text-[12px] font-light md:pb-0">
             @{currentYear} <span className="font-medium">Blueeyes.iCu</span>, all rights reserved
           </p>
         </div>

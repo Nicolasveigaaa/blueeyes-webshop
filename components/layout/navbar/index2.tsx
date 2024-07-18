@@ -18,12 +18,12 @@ export default function Navbar2() {
           </Link>
         </div>
 
-        <div className="flex flex-1 justify-center">
+        <div className="flex h-full flex-1 justify-center">
           <Link
             href="/"
-            className="flex w-full items-center justify-center md:w-auto md:justify-start"
+            className="flex h-full w-full items-center justify-center md:w-auto md:justify-start"
           >
-            <div className="flex items-center gap-7">
+            <div className="flex h-full items-center gap-7">
               <Image
                 src="/icons/eyes-logo.svg"
                 alt="blue eyes logo"
