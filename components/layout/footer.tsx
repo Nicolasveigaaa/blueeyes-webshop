@@ -1,3 +1,4 @@
+import Newsletter from 'components/newsletter';
 import { footerEkstra, menuLinks, socialLinks } from 'lib/menu-links';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -61,7 +62,7 @@ export default function Footer() {
 
           <div className="mx-auto flex w-[80%] justify-center gap-2">
             <div>
-              {/*<Newsletter />*/}
+              <Newsletter />
               <p className="mt-2 text-center text-sm font-light">
                 Get notified before a drop so you dont miss out!
               </p>
