@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="flex h-[550px] w-full flex-col justify-between bg-white">
-      <div className="mx-auto mt-10 grid h-full w-10/12 grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-3">
+      <div className="container mx-auto mt-10 grid h-full grid-cols-1 px-6 text-lg md:grid-cols-2 lg:grid-cols-3">
         <div className="hidden flex-col gap-4 border-y lg:flex lg:pt-16">
           <h4 className="text-center">
             Blueeyes.iCu

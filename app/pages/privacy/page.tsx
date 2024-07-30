@@ -44,7 +44,7 @@ const page = () => {
               <ul className="flex list-decimal flex-col gap-4 pl-5 leading-10">
                 <li>
                   <h3>Device Information</h3>
-                  <ul className="list-disc pl-5 font-light">
+                  <ul className="list-disc pl-5 font-light ">
                     <li>
                       <p>
                         Examples of collected Personal Information: web browser version, IP address,
@@ -120,10 +120,10 @@ const page = () => {
               </ul>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-8 flex flex-col gap-4 leading-10">
               <h2 className="text-lg">Sharing Personal Information</h2>
 
-              <p className="text-base font-light leading-10">
+              <p className="text-base font-light ">
                 We may share your Personal Information with service providers to facilitate our
                 services and fulfill contractual obligations, as outlined above. For instance:
               </p>
@@ -145,10 +145,10 @@ const page = () => {
               </ul>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-8 flex flex-col gap-4 leading-10">
               <h2 className="text-lg">Your Rights</h2>
 
-              <p className="text-base font-light leading-10">
+              <p className="text-base font-light">
                 Under GDPR, if you reside in the EEA, you have rights regarding your Personal
                 Information:
               </p>

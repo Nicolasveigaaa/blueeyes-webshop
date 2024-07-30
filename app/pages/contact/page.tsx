@@ -71,15 +71,15 @@ const page = () => {
 
                   <div>
                     <div className="inline-flex flex-col gap-1">
-                      <a href="tel:+4561314292" className="transition-all hover:text-gray-600">
-                        +45 61 31 42 92
+                      <a href="tel:+4528992287" className="transition-all hover:text-gray-600">
+                        +45 28 99 22 87
                       </a>
 
                       <a
-                        href="mailto:general@blueeyes-icu.com"
+                        href="mailto:albertheiberglarsen@gmail.com"
                         className="text-base transition-all hover:text-gray-600"
                       >
-                        general@blueeyes-icu.com
+                        albertheiberglarsen@gmail.com
                       </a>
                       <div className="w-fullrounded-full inset-0 h-[2px] bg-[#3E54A4]"></div>
                     </div>
@@ -99,10 +99,10 @@ const page = () => {
                       </a>
 
                       <a
-                        href="mailto:general@blueeyes-icu.com"
+                        href="mailto:Silastb@live.dk"
                         className="text-base transition-all hover:text-gray-600"
                       >
-                        general@blueeyes-icu.com
+                        Silastb@live.dk
                       </a>
 
                       <div className="w-fullrounded-full inset-0 h-[2px] bg-[#3E54A4]"></div>

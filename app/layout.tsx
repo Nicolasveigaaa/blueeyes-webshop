@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { ensureStartsWith } from 'lib/utils';
 import { ReactNode } from 'react';
 import './globals.css';
+import CookiePopup from 'components/popup/cookie-accept';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -37,7 +38,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en" className={GeistSans.variable}>
       <body className="bg-white text-black">
         <Navbar2 />
-
+        <CookiePopup />
         <main>{children}</main>
         <Footer />
       </body>
