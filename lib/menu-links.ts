@@ -1,12 +1,12 @@
 export const menuLinks = [
-  { url: '/', name: 'Home', openNewSite: false },
+  { url: '/pages/shop', name: 'Shop', openNewSite: false },
   { url: '/pages/about', name: 'About', openNewSite: false },
   { url: 'https://www.gallery.blueeyes-icu.com/', name: 'Gallery', openNewSite: true },
   { url: '/pages/contact', name: 'Contact', openNewSite: false }
 ];
 
 export const menuLinksMobile = [
-  { url: '/', name: 'Home', openNewSite: false },
+  { url: '/pages/shop', name: 'Shop', openNewSite: false },
   { url: '/pages/about', name: 'About', openNewSite: false },
   { url: 'https://www.gallery.blueeyes-icu.com/', name: 'Gallery', openNewSite: true },
   { url: '/pages/contact', name: 'Contact', openNewSite: false }

@@ -1,3 +1,4 @@
+import Cart from 'components/cart';
 import { menuLinks } from 'lib/menu-links';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,6 +19,10 @@ export default function Navbar2() {
                 </sup>
               </p>
             </Link>
+
+            <div className="block sm:hidden">
+              <MobileMenu />
+            </div>
           </div>
 
           {/* Center Section */}
@@ -36,24 +41,28 @@ export default function Navbar2() {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-1 items-center justify-end">
+          <div className="flex flex-1 items-center justify-end gap-4 lg:gap-8">
             <ul className="hidden gap-8 lg:flex">
               {menuLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.url}
-                    className="group"
+                    className="group relative"
                     target={link.openNewSite ? '_blank' : ''}
                     rel={link.openNewSite ? 'noreferrer noopener' : ''}
                   >
                     <p>{link.name}</p>
-                    <div className="inset-0 h-[2px] w-full scale-x-0 rounded-full bg-[#3E54A4] transition-all group-hover:scale-x-100"></div>
+                    <span className="absolute inset-x-0 h-[2px] w-full scale-x-0 rounded-full bg-[#3E54A4] transition-all group-hover:scale-x-100"></span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="block lg:hidden">
+            <div className="hidden sm:block lg:hidden">
               <MobileMenu />
+            </div>
+
+            <div className="flex -translate-y-[1px] flex-col justify-center">
+              <Cart />
             </div>
           </div>
         </div>
