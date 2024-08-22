@@ -16,12 +16,14 @@ export default async function FeaturedSection() {
       {/* HERO / Featured Section 1 */}
       <section className="flex h-full w-full flex-col lg:flex-row">
         <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-[100vh] lg:w-1/2">
+          <div className="absolute inset-0 bottom-0 right-0 h-full w-full bg-red-300">heee</div>
+          {/*
           <Image
             src="/bg-billeder/bg-1.jpg"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
-          />
+          />*/}
         </div>
 
         <div className="order-1 flex h-full w-full flex-col justify-between lg:order-2 lg:w-1/2">
