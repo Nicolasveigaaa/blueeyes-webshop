@@ -33,15 +33,13 @@ export default async function FeaturedSection() {
             </h1>
 
             <div className="flex items-center justify-center">
-              <a href="#" aria-label="product redirect button" className="group">
-                <Link href="/pages/shop">
-                  <div className="flex items-center justify-center gap-2 transition-all group-hover:gap-4">
-                    <p className="">View the gallery</p>
-                    <ArrowRightIcon width={16} height={16} />
-                  </div>
-                </Link>
+              <Link href="/pages/shop" className="group">
+                <div className="flex items-center justify-center gap-2 transition-all group-hover:gap-4">
+                  <p className="">View the collection</p>
+                  <ArrowRightIcon width={16} height={16} />
+                </div>
                 <div className="h-[1px] w-full bg-white"></div>
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -76,9 +76,10 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
 
-      <div className="h-full w-full bg-white">
-        <div className="flex flex-col  md:flex-row ">
-          <div className="mt-14 h-full w-full">
+      <div className="relative h-full w-full bg-white">
+        <div className="flex flex-col md:flex-row">
+          {/* Image Gallery Section */}
+          <div className="mt-16 w-full md:w-1/2 lg:w-8/12">
             <Suspense
               fallback={
                 <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
@@ -88,9 +89,10 @@ export default async function ProductPage({ params }: { params: { handle: string
             </Suspense>
           </div>
 
-          <div className=" h-full w-full lg:w-1/2">
-            <div className="relative md:h-screen">
-              <div className="sticky right-0 top-0 flex w-full flex-col gap-8 p-8 md:p-12">
+          {/* Product Description Section */}
+          <div className="w-full md:w-1/2 lg:w-4/12">
+            <div className="sticky top-0">
+              <div className="flex flex-col gap-8 p-8 md:p-12">
                 <ProductDescription product={product} />
               </div>
             </div>
