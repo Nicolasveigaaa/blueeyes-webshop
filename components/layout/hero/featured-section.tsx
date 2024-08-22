@@ -21,8 +21,6 @@ export default async function FeaturedSection() {
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
-            placeholder="blur"
-            blurDataURL="base64"
           />
         </div>
 
