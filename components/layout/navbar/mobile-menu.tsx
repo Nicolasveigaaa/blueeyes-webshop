@@ -1,14 +1,13 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment, useEffect, useState } from 'react';
 
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // menu link import
-import { menuLinksMobile, socialLinks } from 'lib/menu-links';
+import { menuLinksMobile } from 'lib/menu-links';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,22 +55,27 @@ export default function MobileMenu() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-10/12 flex-col bg-white bg-opacity-95 pb-6 backdrop-blur-xl">
-              <div className="p-4">
-                <button
-                  className="relative z-10 flex items-center justify-center text-black transition-colors"
-                  onClick={closeMobileMenu}
-                  aria-label="Close mobile menu"
-                >
-                  <XMarkIcon className="h-6 transition-all ease-in-out hover:rotate-45 hover:scale-110" />
-                </button>
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white bg-opacity-95 pb-6 backdrop-blur-xl md:w-[390px]">
+              <div className="p-6">
+                <div className="flex justify-between">
+                  <button
+                    className="relative z-10 flex items-center justify-center text-black transition-colors"
+                    onClick={closeMobileMenu}
+                    aria-label="Close mobile menu"
+                  >
+                    <XMarkIcon className="h-6 transition-all ease-in-out hover:rotate-45 hover:scale-110" />
+                  </button>
+                  <p className="">Menu</p>
+                </div>
 
-                <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-center">
+                <div className="mt-24">
+                  <p className="mb-10 text-lg">Navigation</p>
+
                   {menuLinksMobile.length ? (
-                    <ul className="flex w-full flex-col items-center">
+                    <ul className="flex flex-col gap-6 text-2xl">
                       {menuLinksMobile.map((link, index) => (
                         <li
-                          className="py-2 text-4xl text-black transition-colors hover:underline"
+                          className="hover border-b-2 border-blue-700 group-hover:bg-blue-700 group-hover:text-white"
                           key={index}
                         >
                           <Link
@@ -79,55 +83,15 @@ export default function MobileMenu() {
                             onClick={closeMobileMenu}
                             target={link.openNewSite ? '_blank' : ''}
                             rel={link.openNewSite ? 'noreferrer noopener' : ''}
+                            className="group flex items-center justify-between"
                           >
                             {link.name}
+                            <ArrowRightIcon className="h-5 w-5" />
                           </Link>
                         </li>
                       ))}
                     </ul>
                   ) : null}
-
-                  {/* Socials */}
-                  <div className="mt-5 flex w-full justify-center">
-                    {socialLinks.length ? (
-                      <ul className="mx-auto flex items-center gap-6">
-                        {socialLinks.map((socials, index) => (
-                          <li className="py-2 text-4xl text-black" key={index}>
-                            <Link
-                              href={socials.url}
-                              onClick={closeMobileMenu}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <Image
-                                src={`/icons/${socials.icon}`}
-                                alt={`${socials.name} link`}
-                                width={25}
-                                height={25}
-                                className="object-fit"
-                              />
-                            </Link>
-                          </li>
-                        ))}
-                        <li>
-                          <Link
-                            href="/"
-                            onClick={closeMobileMenu}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Image
-                              src="/icons/Tiktok.svg"
-                              alt="Tiktok link"
-                              width={20}
-                              height={20}
-                              className="object-fit"
-                            />
-                          </Link>
-                        </li>
-                      </ul>
-                    ) : null}
-                  </div>
                 </div>
               </div>
             </Dialog.Panel>

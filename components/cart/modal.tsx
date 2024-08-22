@@ -1,6 +1,7 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
+import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
 import type { Cart } from 'lib/shopify/types';
@@ -66,15 +67,22 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
             <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white bg-opacity-95 p-6 text-black backdrop-blur-xl md:w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="">My Cart</p>
-
                 <button aria-label="Close cart" onClick={closeCart} className="transition-all">
                   <CloseCart />
                 </button>
               </div>
 
               {!cart || cart.lines.length === 0 ? (
-                <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
+                <div className="mt-20 flex w-full flex-col items-center justify-center gap-10 overflow-hidden">
                   <p className="mt-6 text-center text-lg">Your cart is empty.</p>
+                  <ShoppingCartIcon className="h-20 w-20 text-[#3E54A4]" />
+                  <Link
+                    href="/pages/shop"
+                    className="w-full bg-[#3E54A4] p-3 text-center text-sm font-medium text-white opacity-100 hover:opacity-90"
+                    onClick={closeCart}
+                  >
+                    Start filling it up
+                  </Link>
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
