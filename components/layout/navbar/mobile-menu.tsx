@@ -74,19 +74,18 @@ export default function MobileMenu() {
                   {menuLinksMobile.length ? (
                     <ul className="flex flex-col gap-6 text-2xl">
                       {menuLinksMobile.map((link, index) => (
-                        <li
-                          className="hover border-b-2 border-blue-700 group-hover:bg-blue-700 group-hover:text-white"
-                          key={index}
-                        >
+                        <li className="" key={index}>
                           <Link
                             href={link.url}
                             onClick={closeMobileMenu}
                             target={link.openNewSite ? '_blank' : ''}
                             rel={link.openNewSite ? 'noreferrer noopener' : ''}
-                            className="group flex items-center justify-between"
+                            className="group flex items-center justify-between border-b border-[#3E54A4]"
                           >
-                            {link.name}
-                            <ArrowRightIcon className="h-5 w-5" />
+                            <p className="transition-all duration-150 group-hover:translate-x-4 group-hover:text-gray-400">
+                              {link.name}
+                            </p>
+                            <ArrowRightIcon className="h-5 w-5 transition-all duration-150 group-hover:-translate-x-4" />
                           </Link>
                         </li>
                       ))}

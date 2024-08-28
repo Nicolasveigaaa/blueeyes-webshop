@@ -26,9 +26,14 @@ export default async function FeaturedSection() {
 
         <div className="order-1 flex h-full w-full flex-col justify-between lg:order-2 lg:w-1/2">
           <div className="h-[80vh] w-full bg-[#3E54A4] px-10 py-20 text-white lg:h-[100vh]">
-            <h1 className="flex h-full items-center justify-between text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
-              <span>Feeling</span> <span>Blue?</span>
-            </h1>
+            <div className="flex h-full flex-col items-center justify-center">
+              <div>
+                <h1 className="flex h-full items-center justify-between gap-6 text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
+                  <span>Blueeyes</span> <span>iCu</span>
+                </h1>
+                <p className="text-center text-2xl uppercase">Limited Collections</p>
+              </div>
+            </div>
 
             <div className="flex items-center justify-center">
               <Link href="/pages/shop" className="group">
@@ -41,7 +46,7 @@ export default async function FeaturedSection() {
             </div>
           </div>
 
-          <div className="hidden h-[400px] bg-white p-16 lg:block lg:h-[800px] lg:p-8 xl:h-[1080px] xl:p-20">
+          <div className="hidden h-[400px] bg-white p-16 lg:block lg:h-[800px] lg:p-8 xl:h-[900px] xl:p-20">
             <div className="relative h-full w-full">
               <Link
                 href={`/product/${firstProduct.handle}`}
@@ -80,7 +85,7 @@ export default async function FeaturedSection() {
       {/* Featured Section 2 */}
       <section
         style={{}}
-        className="relative flex h-[1500px] w-full flex-col sm:h-[2000px] lg:h-[800px] lg:flex-row xl:h-[1080px]"
+        className="relative flex h-[1500px] w-full flex-col sm:h-[2000px] lg:h-[800px] lg:flex-row xl:h-[900px]"
       >
         <div className="h-full bg-white p-6 sm:p-10 md:p-16 lg:hidden">
           {/* Hidden mobile featureProduct */}
