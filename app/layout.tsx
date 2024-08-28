@@ -1,10 +1,10 @@
 import Footer from 'components/layout/footer';
 import Navbar2 from 'components/layout/navbar/index2';
+import CookiePopup from 'components/popup/cookie-accept';
 import { GeistSans } from 'geist/font/sans';
 import { ensureStartsWith } from 'lib/utils';
 import { ReactNode } from 'react';
 import './globals.css';
-import CookiePopup from 'components/popup/cookie-accept';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
