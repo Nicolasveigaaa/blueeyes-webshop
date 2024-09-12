@@ -3,11 +3,12 @@ import Price from 'components/price';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export default async function FeaturedSection() {
   const featuredProducts = await getCollectionProducts({ collection: 'frontpage' });
 
-  if (!featuredProducts[0] || !featuredProducts[1]) return null;
+  if (!featuredProducts[0] || !featuredProducts[1]) return notFound;
 
   const [firstProduct, secondProduct] = featuredProducts;
 
@@ -21,6 +22,7 @@ export default async function FeaturedSection() {
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
+            quality={100}
           />
         </div>
 
