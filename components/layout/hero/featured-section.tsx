@@ -17,7 +17,7 @@ export default async function FeaturedSection() {
       <section className="flex h-full w-full flex-col lg:flex-row">
         <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-[100vh] lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-5.JPG"
+            src="/bg-billeder/bg-10.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
