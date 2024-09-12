@@ -1,12 +1,11 @@
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 const shop = async () => {
   const products = await getCollectionProducts({ collection: 'shop' });
 
-  if (!products.length) return notFound;
+  if (!products.length) return null;
 
   return (
     <>

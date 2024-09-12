@@ -3,12 +3,11 @@ import Price from 'components/price';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 export default async function FeaturedSection() {
   const featuredProducts = await getCollectionProducts({ collection: 'frontpage' });
 
-  if (!featuredProducts[0] || !featuredProducts[1]) return notFound;
+  if (!featuredProducts[0] || !featuredProducts[1]) return null;
 
   const [firstProduct, secondProduct] = featuredProducts;
 
