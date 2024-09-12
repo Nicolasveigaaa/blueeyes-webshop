@@ -78,7 +78,7 @@ const page = () => {
 
         <div className="sticky top-0 h-screen w-full lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-2.JPG"
+            src="/bg-billeder/bg-5.webp"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill

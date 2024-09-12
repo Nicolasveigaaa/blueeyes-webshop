@@ -17,7 +17,7 @@ export default async function FeaturedSection() {
       <section className="flex h-full w-full flex-col lg:flex-row">
         <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-[100vh] lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-10.JPG"
+            src="/bg-billeder/bg-9.webp"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
@@ -164,7 +164,7 @@ export default async function FeaturedSection() {
 
         <div className="relative order-1 h-[800px] w-full sm:h-[1000px] md:h-[1100px] lg:order-2 lg:h-full lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-7.JPG"
+            src="/bg-billeder/bg-11.webp"
             alt="background image of blue eyes products"
             className="object-cover"
             fill

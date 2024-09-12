@@ -14,7 +14,7 @@ const page = () => {
       <section className="flex w-full flex-col lg:flex-row">
         <div className="relative top-0 order-2 h-[100dvh] w-full lg:sticky lg:order-1 lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-1.JPG"
+            src="/bg-billeder/bg-3.webp"
             alt="background image showing model with Blue Eyes product"
             className="object-cover "
             fill
