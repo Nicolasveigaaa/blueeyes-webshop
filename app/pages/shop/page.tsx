@@ -10,9 +10,9 @@ const shop = async () => {
   return (
     <>
       <section className="h-full w-full">
-        <div className=" grid w-full grid-cols-1 bg-white p-6 md:grid-cols-2">
+        <div className=" grid w-full grid-cols-1 gap-2 bg-white md:grid-cols-2">
           {products.map((product, index) => (
-            <div className="relative h-[800px]" key={index}>
+            <div className="relative h-[800px] p-6" key={index}>
               <Link href={`/product/${product.handle}`} aria-description="Button" className="group">
                 <Image
                   src={product.featuredImage.url}
