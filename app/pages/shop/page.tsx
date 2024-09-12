@@ -10,7 +10,7 @@ const shop = async () => {
 
   return (
     <>
-      <section className="flex h-full w-full flex-col lg:flex-row">
+      <section className="grid h-full w-full grid-cols-1 md:grid-cols-2 ">
         <div className="order-2 h-full w-full bg-white p-6 sm:p-10 md:p-16 lg:order-1 lg:mt-0 lg:w-1/2 lg:p-8 xl:p-20">
           {products.map((product, index) => (
             <div className="relative h-[800px]" key={index}>
