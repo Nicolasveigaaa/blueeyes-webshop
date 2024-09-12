@@ -179,7 +179,7 @@ const page = () => {
 
         <div className="relative top-0 h-[100dvh] w-full lg:sticky lg:w-1/2">
           <Image
-            src="/bg-billeder/bil.JPG"
+            src="/bg-billeder/bg-3.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover "
             fill

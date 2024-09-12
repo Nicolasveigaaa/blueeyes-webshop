@@ -34,9 +34,9 @@ export default function HomePage() {
         />
 
         <div className="absolute left-1/2 top-0 inline-flex h-full w-[90%] max-w-[1280px] -translate-x-1/2 transform flex-col justify-between py-4 text-white sm:py-6 md:py-9 lg:py-24 xl:w-[80%] 2xl:w-[80%]">
-          <h2 className="mt-6 flex flex-col justify-between gap-2 text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:flex-row lg:gap-0 lg:text-5xl 2xl:text-6xl">
-            <span>We See Your</span>
-            <span className="flex sm:justify-end">Blue Lifestyle</span>
+          <h2 className="mt-6 flex flex-col justify-between gap-2 text-4xl font-bold uppercase sm:text-6xl md:text-7xl lg:flex-row lg:gap-0 lg:text-6xl 2xl:text-7xl">
+            <span>Blue</span>
+            <span className="flex sm:justify-end">Lifestyle</span>
           </h2>
 
           <div className="flex gap-2">
@@ -49,7 +49,6 @@ export default function HomePage() {
                 className="object-fit"
               />
             </div>
-            <p className="text-[12px] sm:text-sm lg:text-base xl:text-lg">{'// 2024©'}</p>
           </div>
         </div>
       </section>

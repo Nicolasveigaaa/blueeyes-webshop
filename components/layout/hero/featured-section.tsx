@@ -17,7 +17,7 @@ export default async function FeaturedSection() {
       <section className="flex h-full w-full flex-col lg:flex-row">
         <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-[100vh] lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-1.JPG"
+            src="/bg-billeder/bg-5.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
@@ -31,7 +31,7 @@ export default async function FeaturedSection() {
                 <h1 className="flex h-full items-center justify-between gap-6 text-3xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-5xl xl:px-20 2xl:text-6xl">
                   <span>Blueeyes</span> <span>iCu</span>
                 </h1>
-                <p className="text-center text-2xl uppercase">Limited Collections</p>
+                <p className="text-center text-sm uppercase md:text-2xl">Limited Collections</p>
               </div>
             </div>
 
@@ -70,7 +70,11 @@ export default async function FeaturedSection() {
 
                 <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                   <p className="text-base">{firstProduct.title}</p>
-                  <p className="text-sm font-light">350kr</p>
+                  <Price
+                    className="text-sm font-light"
+                    amount={firstProduct.priceRange.maxVariantPrice.amount}
+                    currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
+                  />
                 </div>
 
                 <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
@@ -143,7 +147,11 @@ export default async function FeaturedSection() {
 
               <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                 <p className="text-base">{secondProduct.title}</p>
-                <p className="text-sm font-light">350kr</p>
+                <Price
+                  className="text-sm font-light"
+                  amount={firstProduct.priceRange.maxVariantPrice.amount}
+                  currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
+                />
               </div>
 
               <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
@@ -155,7 +163,7 @@ export default async function FeaturedSection() {
 
         <div className="relative order-1 h-[800px] w-full sm:h-[1000px] md:h-[1100px] lg:order-2 lg:h-full lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-4.JPG"
+            src="/bg-billeder/bg-7.JPG"
             alt="background image of blue eyes products"
             className="object-cover"
             fill

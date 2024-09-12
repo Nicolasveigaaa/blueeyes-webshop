@@ -33,7 +33,7 @@ const page = () => {
 
         <div className="sticky top-0 h-screen w-full lg:w-1/2">
           <Image
-            src="/shop/featured-222.JPG"
+            src="/bg-billeder/bg-4.JPG"
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
