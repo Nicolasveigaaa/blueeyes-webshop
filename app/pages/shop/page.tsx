@@ -9,7 +9,7 @@ const shop = async () => {
 
   return (
     <>
-      <section className="h-full w-full">
+      <section className="mx-auto mt-20 h-full w-full max-w-[1280px]">
         <div className=" grid w-full grid-cols-1 gap-2 bg-white md:grid-cols-2">
           {products.map((product, index) => (
             <div className="relative h-[800px] p-6" key={index}>
