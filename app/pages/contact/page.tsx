@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+// Image imports :
+import Bg1 from 'public/bg-billeder/bg-3.webp';
+
 export const metadata = {
   title: 'Contact',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
@@ -14,10 +17,11 @@ const page = () => {
       <section className="flex w-full flex-col lg:flex-row">
         <div className="relative top-0 order-2 h-[100dvh] w-full lg:sticky lg:order-1 lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-3.webp"
+            src={Bg1}
             alt="background image showing model with Blue Eyes product"
             className="object-cover "
             fill
+            placeholder="blur"
           />
         </div>
         <div className="order-1 w-full py-28 lg:order-2 lg:w-1/2 lg:pt-28">

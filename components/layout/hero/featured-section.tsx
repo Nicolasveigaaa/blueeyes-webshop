@@ -4,6 +4,10 @@ import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// image imports :
+import Bg2 from 'public/bg-billeder/bg-11.webp';
+import Bg1 from 'public/bg-billeder/bg-9.webp';
+
 export default async function FeaturedSection() {
   const featuredProducts = await getCollectionProducts({ collection: 'frontpage' });
 
@@ -17,11 +21,11 @@ export default async function FeaturedSection() {
       <section className="flex h-full w-full flex-col lg:flex-row">
         <div className="relative order-2 h-[400px] w-full sm:h-[500px] md:h-[600px] lg:sticky lg:top-0 lg:order-1 lg:h-[100vh] lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-9.webp"
+            src={Bg1}
             alt="background image showing model with Blue Eyes product"
             className="object-cover"
             fill
-            quality={100}
+            placeholder="blur"
           />
         </div>
 
@@ -164,10 +168,11 @@ export default async function FeaturedSection() {
 
         <div className="relative order-1 h-[800px] w-full sm:h-[1000px] md:h-[1100px] lg:order-2 lg:h-full lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-11.webp"
+            src={Bg2}
             alt="background image of blue eyes products"
             className="object-cover"
             fill
+            placeholder="blur"
           />
         </div>
       </section>

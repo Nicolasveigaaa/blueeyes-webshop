@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// image imports :
+import Bg1 from 'public/bg-billeder/bg-1.webp';
+
 export const metadata = {
   title: 'Terms & Conditions',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
@@ -179,10 +182,11 @@ const page = () => {
 
         <div className="relative top-0 h-[100dvh] w-full lg:sticky lg:w-1/2">
           <Image
-            src="/bg-billeder/bg-1.webp"
+            src={Bg1}
             alt="background image showing model with Blue Eyes product"
             className="object-cover "
             fill
+            placeholder="blur"
           />
         </div>
       </section>
