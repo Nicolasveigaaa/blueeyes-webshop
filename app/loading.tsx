@@ -1,27 +1,22 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Loading() {
   return (
-    <main
-      className={`absolute inset-0 z-[200] flex h-screen items-center justify-center bg-white transition-opacity duration-500`}
-    >
-      <motion.div
-        className="flex items-center gap-7"
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1.1 }}
-        transition={{ duration: 0.3, loop: Infinity, ease: 'linear' }}
-      >
+    <main className="absolute inset-0 z-[200] flex h-screen flex-col items-center justify-center gap-12 bg-white transition-opacity duration-500">
+      <div className="flex items-center justify-center">
         <Image
           src="/icons/eyes-logo.svg"
           alt="blue eyes logo"
-          width={110}
-          height={110}
+          width={150}
+          height={150}
           className="object-contain"
         />
-      </motion.div>
+      </div>
+
+      {/* Spinner */}
+      <div className="flex items-center justify-center">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-500 border-t-transparent"></div>
+      </div>
     </main>
   );
 }

@@ -2,7 +2,7 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const CookiePopup = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -38,7 +38,7 @@ const CookiePopup = () => {
             Privacy Policy
           </Link>{' '}
           and{' '}
-          <Link href="/terms-&-conditions" className="underline">
+          <Link href="/pages/terms-&-conditions" className="underline">
             Terms & Conditions
           </Link>
           .

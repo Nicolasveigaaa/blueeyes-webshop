@@ -9,6 +9,9 @@ export const metadata = {
   }
 };
 
+// image imports :
+import Bg1 from 'public/bg-billeder/bg-hav.webp';
+
 export default function HomePage() {
   return (
     <>
@@ -19,10 +22,10 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="relative h-[400px] sm:h-[600px] md:h-[750px] lg:h-[800px] 2xl:h-[900px]">
         <Image
-          src="/bg-billeder/hav.webp"
+          src={Bg1}
           alt="background image of blue eyes products"
           fill
-          quality={100}
+          placeholder="blur"
           className="object-cover"
         />
 
