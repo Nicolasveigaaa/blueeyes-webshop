@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 // image imports :
-import Bg1 from 'public/bg-billeder/bg-hav.webp';
+import Bg1 from 'public/bg-billeder/hav.webp';
 
 export default function HomePage() {
   return (
