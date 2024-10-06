@@ -15,7 +15,7 @@ export default function Loading() {
 
       {/* Spinner */}
       <div className="flex items-center justify-center">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-500 border-t-transparent"></div>
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-[#3E54A4] border-t-transparent"></div>
       </div>
     </main>
   );
