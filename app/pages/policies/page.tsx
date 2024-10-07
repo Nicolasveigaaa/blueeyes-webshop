@@ -1,3 +1,4 @@
+import CardAnimation from 'components/card-scale-animation';
 import Image from 'next/image';
 
 // image imports :
@@ -79,14 +80,16 @@ const page = () => {
           </div>
         </div>
 
-        <div className="sticky top-0 h-screen w-full lg:w-1/2">
-          <Image
-            src={Bg1}
-            alt="background image showing model with Blue Eyes product"
-            className="object-cover"
-            fill
-            placeholder="blur"
-          />
+        <div className="sticky top-0 h-screen w-full overflow-hidden lg:w-1/2">
+          <CardAnimation>
+            <Image
+              src={Bg1}
+              alt="background image showing model with Blue Eyes product"
+              className="object-cover"
+              fill
+              placeholder="blur"
+            />
+          </CardAnimation>
         </div>
       </section>
     </>

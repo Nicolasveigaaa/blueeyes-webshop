@@ -1,3 +1,4 @@
+import CardAnimation from 'components/card-scale-animation';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -180,14 +181,16 @@ const page = () => {
           </div>
         </div>
 
-        <div className="relative top-0 h-[100dvh] w-full lg:sticky lg:w-1/2">
-          <Image
-            src={Bg1}
-            alt="background image showing model with Blue Eyes product"
-            className="object-cover "
-            fill
-            placeholder="blur"
-          />
+        <div className="relative top-0 h-[100dvh] w-full overflow-hidden lg:sticky lg:w-1/2">
+          <CardAnimation>
+            <Image
+              src={Bg1}
+              alt="background image showing model with Blue Eyes product"
+              className="object-cover "
+              fill
+              placeholder="blur"
+            />
+          </CardAnimation>
         </div>
       </section>
     </>

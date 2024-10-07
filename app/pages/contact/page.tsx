@@ -1,3 +1,4 @@
+import CardAnimation from 'components/card-scale-animation';
 import Image from 'next/image';
 
 // Image imports :
@@ -15,14 +16,16 @@ const page = () => {
   return (
     <>
       <section className="flex w-full flex-col lg:flex-row">
-        <div className="relative top-0 order-2 h-[100dvh] w-full lg:sticky lg:order-1 lg:w-1/2">
-          <Image
-            src={Bg1}
-            alt="background image showing model with Blue Eyes product"
-            className="object-cover "
-            fill
-            placeholder="blur"
-          />
+        <div className="relative top-0 order-2 h-[100dvh] w-full overflow-hidden lg:sticky lg:order-1 lg:w-1/2">
+          <CardAnimation>
+            <Image
+              src={Bg1}
+              alt="background image showing model with Blue Eyes product"
+              className="object-cover "
+              fill
+              placeholder="blur"
+            />
+          </CardAnimation>
         </div>
         <div className="order-1 w-full py-28 lg:order-2 lg:w-1/2 lg:pt-28">
           <div className="flex flex-col gap-6 px-8 lg:px-28">

@@ -1,5 +1,6 @@
 'use client';
 
+import CardAnimation from 'components/card-scale-animation';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -46,10 +47,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative w-full max-w-full flex-shrink-0  md:w-full"
+            className="relative w-full max-w-full flex-shrink-0  overflow-hidden md:w-full"
             style={{ aspectRatio: '1 / 1.2' }}
           >
-            <Image src={image.url} alt={image.altText} layout="fill" className="object-cover" />
+            <CardAnimation>
+              <Image src={image.url} alt={image.altText} layout="fill" className="object-cover" />
+            </CardAnimation>
           </div>
         ))}
       </div>
