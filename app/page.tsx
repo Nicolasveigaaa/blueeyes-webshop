@@ -2,16 +2,16 @@ import CardAnimation from 'components/card-scale-animation';
 import FeaturedSection from 'components/layout/hero/featured-section';
 import Image from 'next/image';
 
+// image imports :
+import Bg1 from 'public/bg-billeder/hav.webp';
+
 export const metadata = {
-  title: 'Blue Eyes | blueeyes-icu.com ',
+  title: 'Blueeyes iCu | Home to the simple yet captivating | Blueeyes.iCu',
   description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'
   }
 };
-
-// image imports :
-import Bg1 from 'public/bg-billeder/hav.webp';
 
 export default function HomePage() {
   return (

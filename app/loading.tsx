@@ -7,15 +7,15 @@ export default function Loading() {
         <Image
           src="/icons/eyes-logo.svg"
           alt="blue eyes logo"
-          width={150}
-          height={150}
+          width={170}
+          height={170}
           className="object-contain"
         />
       </div>
 
       {/* Spinner */}
       <div className="flex items-center justify-center">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-[#3E54A4] border-t-transparent"></div>
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-solid border-[#3E54A4] border-t-transparent"></div>
       </div>
     </main>
   );

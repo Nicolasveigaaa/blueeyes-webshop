@@ -17,7 +17,7 @@ export const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: SITE_NAME!,
-    template: `%s | ${SITE_NAME}`
+    template: `%s | Blueeyes.iCu`
   },
   robots: {
     follow: true,

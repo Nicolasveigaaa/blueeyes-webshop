@@ -44,7 +44,12 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/" className="group" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.tiktok.com/@blueeyes_icu?_t=8pJ6aguJ35s&_r=1"
+                className="group"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src="/icons/Tiktok.svg"
                   alt="Tiktok link"
@@ -73,11 +78,8 @@ export default function Footer() {
 
       <div className="mx-auto mb-10 w-10/12 ">
         <div className="my-16 grid grid-cols-1 items-center gap-8 text-sm md:grid-cols-3 md:gap-0">
-          <Link
-            href="/"
-            className="flex h-full w-full items-center justify-center md:w-auto md:justify-start"
-          >
-            <div className="flex h-full items-center gap-7">
+          <Link href="/" className="inline-flex w-fit">
+            <div className="flex items-center justify-center">
               <Image
                 src="/icons/eyes-logo.svg"
                 alt="blue eyes logo"

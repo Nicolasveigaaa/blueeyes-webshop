@@ -28,7 +28,7 @@ export default function Navbar2() {
           {/* Center Section */}
           <div className="flex items-center justify-center">
             <Link href="/">
-              <div className="flex items-center gap-7">
+              <div className="flex items-center justify-center">
                 <Image
                   src="/icons/eyes-logo.svg"
                   alt="blue eyes logo"
