@@ -18,7 +18,7 @@ const shop = async () => {
 
   return (
     <>
-      <section className="mx-auto mt-20 h-full w-full max-w-[1280px]">
+      <section className="mx-auto mt-20 h-full w-full max-w-[1280px] md:mt-24">
         <div className=" grid w-full grid-cols-1 gap-2 bg-white p-2 md:grid-cols-2 md:gap-12 md:p-0">
           {products.map((product, index) => (
             <div
@@ -42,16 +42,16 @@ const shop = async () => {
                       className="product-image-back absolute left-0 top-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     />
                   )}
-
-                  <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
-                    <p className="text-base">{product.title}</p>
-                    <p className="text-sm font-light">350kr</p>
-                  </div>
-
-                  <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
-                    <p className="text-[12px] font-light uppercase">View Product</p>
-                  </div>
                 </CardAnimation>
+
+                <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
+                  <p className="text-base">{product.title}</p>
+                  <p className="text-sm font-light">350kr</p>
+                </div>
+
+                <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
+                  <p className="text-[12px] font-light uppercase">View Product</p>
+                </div>
               </Link>
             </div>
           ))}
