@@ -19,10 +19,10 @@ const shop = async () => {
   return (
     <>
       <section className="mx-auto mt-20 h-full w-full max-w-[1280px] md:mt-24">
-        <div className=" grid w-full grid-cols-1 gap-2 bg-white p-2 md:grid-cols-2 md:gap-12 md:p-0">
+        <div className="grid w-full grid-cols-1 gap-2 bg-white p-2 md:grid-cols-2 md:gap-12 md:p-0">
           {products.map((product, index) => (
             <div
-              className="md: relative h-[500px] overflow-hidden p-6 lg:h-[700px] 2xl:h-[800px]"
+              className="relative h-[500px] overflow-hidden lg:h-[700px] 2xl:h-[800px]"
               key={index}
             >
               <Link href={`/product/${product.handle}`} aria-description="Button" className="group">
