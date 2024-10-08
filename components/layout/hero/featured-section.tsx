@@ -176,7 +176,7 @@ export default async function FeaturedSection() {
           </div>
         </div>
 
-        <div className="relative order-1 h-[800px] w-full overflow-hidden sm:h-[1000px] md:h-[1100px] lg:order-2 lg:h-full lg:w-1/2">
+        <div className="relative order-1 h-[800px] w-full overflow-hidden sm:h-[1000px] md:h-[2000px] lg:order-2 lg:h-full lg:w-1/2">
           <CardAnimation>
             <Image
               src={Bg2}
