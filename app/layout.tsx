@@ -1,6 +1,7 @@
 import Footer from 'components/layout/footer';
 import Navbar2 from 'components/layout/navbar/index2';
 import CookiePopup from 'components/popup/cookie-accept';
+import SiteBuild from 'components/site-construction';
 import { GeistSans } from 'geist/font/sans';
 import { ensureStartsWith } from 'lib/utils';
 import { ReactNode } from 'react';
@@ -39,6 +40,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="bg-white text-black">
         <Navbar2 />
         <CookiePopup />
+        <SiteBuild />
         <main>{children}</main>
         <Footer />
       </body>

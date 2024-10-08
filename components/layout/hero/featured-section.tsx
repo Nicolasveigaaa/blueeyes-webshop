@@ -104,18 +104,20 @@ export default async function FeaturedSection() {
       >
         <div className="h-full bg-white p-6 sm:p-10 md:p-16 lg:hidden">
           {/* Hidden mobile featureProduct */}
-          <div className="relative h-full">
+          <div className="relative h-full overflow-hidden">
             <Link
               href={`/product/${firstProduct.handle}`}
               aria-description="Button"
               className="group"
             >
-              <Image
-                src={firstProduct.featuredImage.url}
-                alt={`image of model wearing ${firstProduct.title}`}
-                className="object-cover"
-                fill
-              />
+              <CardAnimation>
+                <Image
+                  src={firstProduct.featuredImage.url}
+                  alt={`image of model wearing ${firstProduct.title}`}
+                  className="object-cover"
+                  fill
+                />
+              </CardAnimation>
 
               <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                 <p className="text-base">{firstProduct.title}</p>

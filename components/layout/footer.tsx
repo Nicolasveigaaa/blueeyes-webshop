@@ -78,7 +78,7 @@ export default function Footer() {
 
       <div className="mx-auto mb-10 w-10/12 ">
         <div className="my-16 grid grid-cols-1 items-center gap-8 text-sm md:grid-cols-3 md:gap-0">
-          <Link href="/" className="inline-flex w-fit">
+          <Link href="/" className="mx-auto mb-5 inline-flex w-fit lg:mx-0 lg:mb-0.5">
             <div className="flex items-center justify-center">
               <Image
                 src="/icons/eyes-logo.svg"
