@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Login from './auth/login-autg';
 
 const SiteBuild = () => {
@@ -11,6 +11,13 @@ const SiteBuild = () => {
     setIsLoggedIn(true);
     localStorage.setItem('isLoggedIn', 'true');
   };
+
+  useEffect(() => {
+    const storedLogin = localStorage.getItem('isLoggedIn');
+    if (storedLogin === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   if (isLoggedIn) {
     return null; // Nothing is rendered when logged in
