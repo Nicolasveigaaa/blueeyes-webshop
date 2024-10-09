@@ -7,7 +7,8 @@ import Bg1 from 'public/bg-billeder/hav.webp';
 
 export const metadata = {
   title: 'Blueeyes iCu | Home to the simple yet captivating | Blueeyes.iCu',
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+  description:
+    'Founded in the heart of Copenhagen by Albert and his associates, Blue Eyes ICU was established in 2023. Driven by a passion for fashion and quality, the brand embodies a unique perspective of the world - our perspective.',
   openGraph: {
     type: 'website'
   }
@@ -17,7 +18,6 @@ export default function HomePage() {
   return (
     <>
       {/* HERO / Featured Section */}
-
       <FeaturedSection />
 
       {/* CTA Section */}

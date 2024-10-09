@@ -6,7 +6,6 @@ import Bg1 from 'public/bg-billeder/bg-8.webp';
 
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'
   }

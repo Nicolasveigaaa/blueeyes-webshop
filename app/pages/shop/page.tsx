@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Shop',
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'
   }

@@ -6,7 +6,6 @@ import Bg1 from 'public/bg-billeder/bg-3.webp';
 
 export const metadata = {
   title: 'Contact',
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
   openGraph: {
     type: 'website'
   }
