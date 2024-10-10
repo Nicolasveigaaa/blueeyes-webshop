@@ -1,4 +1,5 @@
 import CardAnimation from 'components/card-scale-animation';
+import Price from 'components/price';
 import { getCollectionProducts } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,7 +30,7 @@ const shop = async () => {
                   <Image
                     src={product.featuredImage.url}
                     alt={`image of model wearing ${product.title}`}
-                    className="object-cover"
+                    className={`object-cover ${product.availableForSale ? '' : 'grayscale'}`}
                     fill
                   />
 
@@ -38,14 +39,19 @@ const shop = async () => {
                       src={product.images[1].url}
                       alt={`image of model wearing ${product.title}`}
                       fill
-                      className="product-image-back absolute left-0 top-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      className={`product-image-back absolute left-0 top-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${product.availableForSale ? '' : 'grayscale'}`}
                     />
                   )}
                 </CardAnimation>
 
                 <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                   <p className="text-base">{product.title}</p>
-                  <p className="text-sm font-light">350kr</p>
+                  <Price
+                    className={`text-sm font-light ${product.availableForSale ? 'block' : 'hidden'}`}
+                    amount={product.priceRange.maxVariantPrice.amount}
+                    currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+                  />
+                  <p className={'text-sm font-light'}>Sold Out</p>
                 </div>
 
                 <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">

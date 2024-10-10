@@ -27,12 +27,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
       <div className="my-10">
         <ul className="text-sm">
-          <li>Free shipping in Denmark</li>
-          <li>Free shipping in EU over €100</li>
-          <li>Free shipping in Europe over €150</li>
-          <li>Free shipping to North America over €200</li>
-          <li>Free shipping to the rest of the world over €250</li>
-          <li>Free exchanges - Easy returns</li>
+          <li>Free shipping on orders above DKK 500</li>
         </ul>
       </div>
     </>

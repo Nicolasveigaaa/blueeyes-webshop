@@ -158,7 +158,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                     })}
                   </ul>
                   <div className="py-4 text-sm text-neutral-500 ">
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 ">
+                    {/*<div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 ">
                       <p>Taxes</p>
                       <p className="text-right text-base text-black">
                         <Price
@@ -166,7 +166,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                           currencyCode={cart.cost.totalTaxAmount.currencyCode}
                         />
                       </p>
-                    </div>
+                    </div>*/}
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 ">
                       <p>Shipping</p>
                       <p className="text-right">Calculated at checkout</p>

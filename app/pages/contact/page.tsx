@@ -55,10 +55,10 @@ const page = () => {
               <div>
                 <div className="inline-flex flex-col gap-1">
                   <a
-                    href="mailto:general@blueeyes-icu.com"
+                    href="mailto:generalblueeyesicu@gmail.com"
                     className="text-base transition-all hover:text-gray-600"
                   >
-                    general@blueeyes-icu.com
+                    generalblueeyesicu@gmail.com
                   </a>
                   <div className="w-fullrounded-full inset-0 h-[2px] bg-[#3E54A4]"></div>
                 </div>
