@@ -13,7 +13,11 @@ export const menuLinksMobile = [
 ];
 
 export const socialLinks = [
-  { url: 'https://www.instagram.com/blueeyes.icu/', name: 'Instagram', icon: 'Insta.svg' },
+  {
+    url: 'https://www.facebook.com/profile.php?id=61567833901379',
+    name: 'Instagram',
+    icon: 'Insta.svg'
+  },
   { url: 'https://www.facebook.com/albert.larsen.777', name: 'Facebook', icon: 'Facebook.svg' }
 ];
 

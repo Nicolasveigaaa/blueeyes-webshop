@@ -46,12 +46,17 @@ const shop = async () => {
 
                 <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                   <p className="text-base">{product.title}</p>
-                  <Price
-                    className={`text-sm font-light ${product.availableForSale ? 'block' : 'hidden'}`}
-                    amount={product.priceRange.maxVariantPrice.amount}
-                    currencyCode={product.priceRange.maxVariantPrice.currencyCode}
-                  />
-                  <p className={'text-sm font-light'}>Sold Out</p>
+
+                  {/* Conditionally render Price and "Sold Out" */}
+                  {product.availableForSale ? (
+                    <Price
+                      className="text-sm font-light"
+                      amount={product.priceRange.maxVariantPrice.amount}
+                      currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+                    />
+                  ) : (
+                    <p className="text-sm font-light">Sold Out</p>
+                  )}
                 </div>
 
                 <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
