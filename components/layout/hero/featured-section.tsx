@@ -115,7 +115,7 @@ export default async function FeaturedSection() {
                 <Image
                   src={firstProduct.featuredImage.url}
                   alt={`image of model wearing ${firstProduct.title}`}
-                  className="object-cover"
+                  className={`object-cover ${firstProduct.availableForSale ? '' : 'grayscale'}`}
                   fill
                 />
               </CardAnimation>
