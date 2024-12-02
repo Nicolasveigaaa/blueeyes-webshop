@@ -16,7 +16,11 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
   if (!cartId || !cart) {
     cart = await createCart();
     cartId = cart.id;
-    cookies().set('cartId', cartId);
+
+    // Ensure cartId is a string before setting it
+    if (cartId) {
+      cookies().set('cartId', cartId);
+    }
   }
 
   if (!selectedVariantId) {
@@ -24,7 +28,7 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
   }
 
   try {
-    await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
+    await addToCart(cartId!, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
     revalidateTag(TAGS.cart);
   } catch (e) {
     return 'Error adding item to cart';

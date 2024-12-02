@@ -36,8 +36,13 @@ function SubmitButton() {
 
 export function DeleteItemButton({ item }: { item: CartItem }) {
   const [message, formAction] = useFormState(removeItem, null);
-  const itemId = item.id;
-  const actionWithVariant = formAction.bind(null, itemId);
+
+  // Ensure `item.id` is valid
+  if (!item.id) {
+    throw new Error('Item ID is required for DeleteItemButton');
+  }
+
+  const actionWithVariant = formAction.bind(null, item.id);
 
   return (
     <form action={actionWithVariant}>

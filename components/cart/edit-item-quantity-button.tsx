@@ -39,11 +39,17 @@ function SubmitButton({ type }: { type: 'plus' | 'minus' }) {
 
 export function EditItemQuantityButton({ item, type }: { item: CartItem; type: 'plus' | 'minus' }) {
   const [message, formAction] = useFormState(updateItemQuantity, null);
+
+  if (!item.id) {
+    throw new Error('Cart item is missing an ID'); // Runtime check for safety
+  }
+
   const payload = {
     lineId: item.id,
     variantId: item.merchandise.id,
     quantity: type === 'plus' ? item.quantity + 1 : item.quantity - 1
   };
+
   const actionWithVariant = formAction.bind(null, payload);
 
   return (
