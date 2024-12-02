@@ -16,7 +16,7 @@ import {
   getCollectionQuery,
   getCollectionsQuery
 } from './queries/collection';
-
+import { getMenuQuery } from './queries/menu';
 import { getPageQuery, getPagesQuery } from './queries/page';
 import {
   getProductQuery,
@@ -28,6 +28,7 @@ import {
   Collection,
   Connection,
   Image,
+  Menu,
   Page,
   Product,
   ShopifyAddToCartOperation,
@@ -38,6 +39,7 @@ import {
   ShopifyCollectionProductsOperation,
   ShopifyCollectionsOperation,
   ShopifyCreateCartOperation,
+  ShopifyMenuOperation,
   ShopifyPageOperation,
   ShopifyPagesOperation,
   ShopifyProduct,
@@ -58,6 +60,7 @@ type ExtractVariables<T> = T extends { variables: object } ? T['variables'] : ne
 
 export async function shopifyFetch<T>({
   cache = 'force-cache',
+  headers,
   query,
   tags,
   variables
@@ -73,7 +76,8 @@ export async function shopifyFetch<T>({
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': key
+        'X-Shopify-Storefront-Access-Token': key,
+        ...headers
       },
       body: JSON.stringify({
         ...(query && { query }),
@@ -110,7 +114,7 @@ export async function shopifyFetch<T>({
   }
 }
 
-const removeEdgesAndNodes = (array: Connection<any>) => {
+const removeEdgesAndNodes = <T>(array: Connection<T>): T[] => {
   return array.edges.map((edge) => edge?.node);
 };
 
@@ -118,7 +122,7 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
   if (!cart.cost?.totalTaxAmount) {
     cart.cost.totalTaxAmount = {
       amount: '0.0',
-      currencyCode: 'USD'
+      currencyCode: cart.cost.totalAmount.currencyCode
     };
   }
 
@@ -159,7 +163,7 @@ const reshapeImages = (images: Connection<Image>, productTitle: string) => {
   const flattened = removeEdgesAndNodes(images);
 
   return flattened.map((image) => {
-    const filename = image.url.match(/.*\/(.*)\..*/)[1];
+    const filename = image.url.match(/.*\/(.*)\..*/)?.[1];
     return {
       ...image,
       altText: image.altText || `${productTitle} - ${filename}`
@@ -250,12 +254,15 @@ export async function updateCart(
   return reshapeCart(res.body.data.cartLinesUpdate.cart);
 }
 
-export async function getCart(cartId: string): Promise<Cart | undefined> {
+export async function getCart(cartId: string | undefined): Promise<Cart | undefined> {
+  if (!cartId) {
+    return undefined;
+  }
+
   const res = await shopifyFetch<ShopifyCartOperation>({
     query: getCartQuery,
     variables: { cartId },
-    tags: [TAGS.cart],
-    cache: 'no-store'
+    tags: [TAGS.cart]
   });
 
   // Old carts becomes `null` when you checkout.
@@ -333,6 +340,23 @@ export async function getCollections(): Promise<Collection[]> {
   return collections;
 }
 
+export async function getMenu(handle: string): Promise<Menu[]> {
+  const res = await shopifyFetch<ShopifyMenuOperation>({
+    query: getMenuQuery,
+    tags: [TAGS.collections],
+    variables: {
+      handle
+    }
+  });
+
+  return (
+    res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
+      title: item.title,
+      path: item.url.replace(domain, '').replace('/collections', '/search').replace('/pages', '')
+    })) || []
+  );
+}
+
 export async function getPage(handle: string): Promise<Page> {
   const res = await shopifyFetch<ShopifyPageOperation>({
     query: getPageQuery,
@@ -404,14 +428,14 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   // otherwise it will continue to retry the request.
   const collectionWebhooks = ['collections/create', 'collections/delete', 'collections/update'];
   const productWebhooks = ['products/create', 'products/delete', 'products/update'];
-  const topic = headers().get('x-shopify-topic') || 'unknown';
+  const topic = (await headers()).get('x-shopify-topic') || 'unknown';
   const secret = req.nextUrl.searchParams.get('secret');
   const isCollectionUpdate = collectionWebhooks.includes(topic);
   const isProductUpdate = productWebhooks.includes(topic);
 
   if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
     console.error('Invalid revalidation secret.');
-    return NextResponse.json({ status: 200 });
+    return NextResponse.json({ status: 401 });
   }
 
   if (!isCollectionUpdate && !isProductUpdate) {
