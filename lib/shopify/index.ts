@@ -451,5 +451,7 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
     revalidateTag(TAGS.products);
   }
 
+  console.log(`Webhook topic: ${topic}`);
+
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
 }

@@ -14,11 +14,15 @@ export const menuLinksMobile = [
 
 export const socialLinks = [
   {
-    url: 'https://www.facebook.com/profile.php?id=61567833901379',
+    url: 'https://www.instagram.com/blueeyes.icu/',
     name: 'Instagram',
     icon: 'Insta.svg'
   },
-  { url: 'https://www.facebook.com/albert.larsen.777', name: 'Facebook', icon: 'Facebook.svg' }
+  {
+    url: 'https://www.facebook.com/profile.php?id=61567833901379',
+    name: 'Facebook',
+    icon: 'Facebook.svg'
+  }
 ];
 
 // Tiktok is hardcode cause of weird height icon
