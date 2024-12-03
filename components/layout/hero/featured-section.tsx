@@ -81,12 +81,15 @@ export default async function FeaturedSection() {
 
                 <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                   <p className="text-base">{firstProduct.title}</p>
-                  <Price
-                    className={`text-sm font-light ${firstProduct.availableForSale ? 'block' : 'hidden'}`}
-                    amount={firstProduct.priceRange.maxVariantPrice.amount}
-                    currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
-                  />
-                  <p className={'text-sm font-light'}>Sold Out</p>
+                  {firstProduct.availableForSale ? (
+                    <Price
+                      className="text-sm font-light"
+                      amount={firstProduct.priceRange.maxVariantPrice.amount}
+                      currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
+                    />
+                  ) : (
+                    <p className="text-sm font-light">Sold Out</p>
+                  )}
                 </div>
 
                 <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
@@ -122,12 +125,15 @@ export default async function FeaturedSection() {
 
               <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                 <p className="text-base">{firstProduct.title}</p>
-                <Price
-                  className={`text-sm font-light ${firstProduct.availableForSale ? 'block' : 'hidden'}`}
-                  amount={firstProduct.priceRange.maxVariantPrice.amount}
-                  currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
-                />
-                <p className={'text-sm font-light'}>Sold Out</p>
+                {firstProduct.availableForSale ? (
+                  <Price
+                    className="text-sm font-light"
+                    amount={firstProduct.priceRange.maxVariantPrice.amount}
+                    currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
+                  />
+                ) : (
+                  <p className="text-sm font-light">Sold Out</p>
+                )}
               </div>
 
               <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
@@ -164,12 +170,15 @@ export default async function FeaturedSection() {
 
               <div className="absolute bottom-0 right-0 z-10 flex h-20 w-full flex-col justify-center bg-[#3E54A4] text-center text-white">
                 <p className="text-base">{secondProduct.title}</p>
-                <Price
-                  className={`text-sm font-light ${firstProduct.availableForSale ? 'block' : 'hidden'}`}
-                  amount={firstProduct.priceRange.maxVariantPrice.amount}
-                  currencyCode={firstProduct.priceRange.maxVariantPrice.currencyCode}
-                />
-                <p className={'text-sm font-light'}>Sold Out</p>
+                {secondProduct.availableForSale ? (
+                  <Price
+                    className="text-sm font-light"
+                    amount={secondProduct.priceRange.maxVariantPrice.amount}
+                    currencyCode={secondProduct.priceRange.maxVariantPrice.currencyCode}
+                  />
+                ) : (
+                  <p className="text-sm font-light">Sold Out</p>
+                )}
               </div>
 
               <div className="absolute bottom-10 right-0 z-[8] flex h-10 w-full translate-y-0 flex-col justify-center bg-white bg-opacity-80 text-center backdrop-blur-xl transition-all duration-300 group-hover:translate-y-[-100%]">
