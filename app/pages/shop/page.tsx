@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const shop = async () => {
-  const products = await getCollectionProducts({ collection: 'shop' });
+  const products = await getCollectionProducts({ collection: 'main' });
 
   if (!products.length) return null;
 
